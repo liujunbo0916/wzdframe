@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.OrderExceptionMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+
+
+
+    <select id="selectByPage" parameterType="page" resultType="pd">
+        select * from t_order_exception
+        where 1= 1
+          <if test="pd.exception_type != null and pd.exception_type != ''">
+            and exception_type = #{pd.exception_type}
+        </if>
+        <if test="pd.order_no != null and pd.order_no != ''">
+            and order_no = #{pd.order_no}
+        </if>
+     <if test="pd.exception_msg != null and pd.exception_msg != ''">
+            and exception_msg = #{pd.exception_msg}
+        </if>
+        <if test="pd.pay_money != null and pd.pay_money != ''">
+            and pay_money = #{pd.pay_money}
+        </if>
+           <if test="pd.deal_status != null and pd.deal_status != ''">
+            and deal_status = #{pd.deal_status}
+        </if>
+         <if test="pd.id != null and pd.id != ''">
+            and id = #{pd.id}
+        </if>
+    </select>
+     <select id="selectByMap" parameterType="page" resultType="pd">
+        select * from t_order_exception
+        where 1= 1
+        <if test="pd.exception_type != null and pd.exception_type != ''">
+            and exception_type = #{pd.exception_type}
+        </if>
+        <if test="pd.order_no != null and pd.order_no != ''">
+            and order_no = #{pd.order_no}
+        </if>
+     <if test="pd.exception_msg != null and pd.exception_msg != ''">
+            and exception_msg = #{pd.exception_msg}
+        </if>
+        <if test="pd.pay_money != null and pd.pay_money != ''">
+            and pay_money = #{pd.pay_money}
+        </if>
+           <if test="pd.deal_status != null and pd.deal_status != ''">
+            and deal_status = #{pd.deal_status}
+        </if>
+         <if test="pd.id != null and pd.id != ''">
+            and id = #{pd.id}
+        </if>
+    </select>
+
+     <select id="selectById" parameterType="pd" resultType="java.lang.Integer">
+          select * from t_order_exception where id = #{id}
+     </select>
+     <insert id="insert" parameterType="pd">
+         insert into t_order_exception (exception_type,order_no,exception_msg,exception_time,pay_money,deal_status)
+         values(#{exception_type},#{order_no},#{exception_msg},#{exception_time},#{pay_money},#{deal_status})
+         <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="exception_id">
+			select LAST_INSERT_ID()
+		</selectKey>
+     </insert>
+     <update id="update" parameterType="pd">
+         update t_order_exception
+         <set>
+           <if test="exception_type != null and exception_type != ''">
+               exception_type = #{exception_type},
+           </if>
+           <if test="order_no != null and order_no != ''">
+               order_no = #{order_no},
+           </if>
+            <if test="exception_msg != null and exception_msg != ''">
+               exception_msg = #{exception_msg},
+           </if>
+             <if test="exception_time != null and exception_time != ''">
+               exception_time = #{exception_time},
+           </if>
+            <if test="pay_money != null and pay_money != ''">
+               pay_money = #{pay_money},
+           </if>
+            <if test="deal_status != null and deal_status != ''">
+               deal_status = #{deal_status},
+           </if>
+         </set>
+         where id = #{id}
+     </update>
+     
+
+</mapper>

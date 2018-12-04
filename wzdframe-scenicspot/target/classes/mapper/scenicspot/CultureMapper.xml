@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.CultureMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<!-- 文化分类 -->
+	<select id="categorySelectByMap" parameterType="pd" resultType="pd">
+	    select * from t_culture_category where 1 = 1
+	    <if test="id != null and id != ''">
+	       and id = #{id}
+	    </if>
+	    <if test="culture_category_name != null and culture_category_name != ''">
+	       and culture_category_name = #{culture_category_name}
+	    </if>
+	      <if test="culture_category_code != null and culture_category_code != ''">
+	       and culture_category_code = #{culture_category_code}
+	    </if>
+	     <if test="culture_category_status != null and culture_category_status != ''">
+	       and culture_category_status = #{culture_category_status}
+	    </if>
+	     <if test="cultrue_category_position != null and cultrue_category_position != ''">
+	       and cultrue_category_position = #{cultrue_category_position}
+	    </if>
+	    order by culture_category_order_by desc
+	</select>
+    <update id="categoryUpdate" parameterType="pd">
+       update t_culture_category 
+       <set>
+         <if test="culture_category_name != null and culture_category_name != ''">
+           culture_category_name  = #{culture_category_name},
+         </if>
+         <if test="culture_category_logo != null and culture_category_logo != ''">
+           culture_category_logo  = #{culture_category_logo},
+         </if>
+         <if test="culture_category_code != null and culture_category_code != ''">
+           culture_category_code  = #{culture_category_code},
+         </if>
+           <if test="culture_category_magic != null and culture_category_magic != ''">
+           culture_category_magic  = #{culture_category_magic},
+         </if>
+         <if test="culture_category_status != null and culture_category_status != ''">
+           culture_category_status  = #{culture_category_status},
+         </if>
+           <if test="culture_category_order_by != null and culture_category_order_by != ''">
+           culture_category_order_by  = #{culture_category_order_by},
+         </if>
+           <if test="culture_category_type != null and culture_category_type != ''">
+           culture_category_type  = #{culture_category_type},
+         </if>
+           <if test="culture_category_color != null and culture_category_color != ''">
+           culture_category_color  = #{culture_category_color},
+         </if>
+         <if test="culture_category_content != null and culture_category_content != ''">
+           culture_category_content  = #{culture_category_content},
+         </if>
+         <if test="cultrue_category_position != null and cultrue_category_position != ''">
+           cultrue_category_position  = #{cultrue_category_position},
+         </if>
+         
+       </set>
+       where id = #{id}
+    </update>
+    <insert id="categoryInsert" parameterType="pd">
+       insert into t_culture_category(culture_category_name,culture_category_logo,culture_category_code,culture_category_time,culture_category_magic,culture_category_status,culture_category_order_by,culture_category_type,culture_category_color,culture_category_content,cultrue_category_position)
+       values(#{culture_category_name},#{culture_category_logo},#{culture_category_code},#{culture_category_time},#{culture_category_magic},#{culture_category_status},#{culture_category_order_by},#{culture_category_type},#{culture_category_color},#{culture_category_content},#{cultrue_category_position})
+    </insert>
+    
+    
+    <select id="selectByMap" resultType="pd" parameterType="page">
+       select * from t_culture_resource where 1 = 1
+       <if test="pd.category_id != null and pd.category_id != ''">
+          and category_id = #{pd.category_id}
+       </if>
+       <if test="pd.id != null and pd.id != ''">
+          and id = #{pd.id}
+       </if>
+    </select>
+    <insert id="insert" parameterType="pd">
+       insert into t_culture_resource (category_id,resource_path,resource_text,resource_desc,resource_order_by,resource_img,resource_title,resource_hour)
+       values(#{category_id},#{resource_path},#{resource_text},#{resource_desc},#{resource_order_by},#{resource_img},#{resource_title},#{resource_hour})
+    </insert>
+    <update id="update" parameterType="pd">
+        update t_culture_resource
+        <set>
+          <if test="category_id != null and category_id != ''">
+            category_id = #{category_id},
+          </if>
+          <if test="resource_path != null and resource_path != ''">
+             resource_path = #{resource_path},
+          </if>
+          <if test="resource_text != null and resource_text != ''">
+             resource_text = #{resource_text},
+          </if>
+          <if test="resource_desc != null and resource_desc != ''">
+             resource_desc = #{resource_desc},
+          </if>
+          <if test="resource_order_by != null and resource_order_by != ''">
+             resource_order_by = #{resource_order_by},
+          </if>
+           <if test="resource_title != null and resource_title != ''">
+             resource_title = #{resource_title},
+          </if>
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="page">
+       delete from t_culture_resource where 1=1 
+       <if test="pd.id != null and pd.id != ''">
+          and id = #{pd.id}
+       </if>
+       <if test="pd.category_id != null and pd.category_id != ''">
+          and category_id  = #{pd.category_id}
+       </if>
+    </delete>
+</mapper>

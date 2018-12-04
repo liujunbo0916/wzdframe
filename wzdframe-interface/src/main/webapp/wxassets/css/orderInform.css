@@ -1,0 +1,33 @@
+.wrap{
+	margin: 10px 0;
+	padding: 10px 0;
+	background: #fff;
+	border-top: 1px solid #E7E7E7;
+	border-bottom: 1px solid #E7E7E7;	
+}
+.content{
+	width: 94%;
+	margin: 0 auto;
+}
+.inpt{
+	width: 100%;
+	margin-top:30px;
+	padding-bottom:10px ;
+	border-bottom: 1px solid #F2F2F2;
+}
+.inpt label{
+	color: #ACACAC;
+}
+.inpt input{
+	background: none;
+	color: #000;
+	font-size: 14px;
+	text-indent: 10px;
+	outline: none;
+}
+.code{
+	float: right;
+	color: #ACACAC;
+	padding-left:10px ;
+	border-left:1px solid #E8E8E8 ;
+}

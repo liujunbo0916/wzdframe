@@ -1,0 +1,26 @@
+.img{
+	width: 80px;
+}
+.txt{
+	margin-left: 10px;
+    flex: 1;
+}
+.inpt{
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+	height: 80px;
+}
+.inpt textarea{
+	width: 94%;
+    height: 94%;
+    margin: 4px auto;
+    display: inherit;
+}
+.btnn{
+	display: block;
+    padding: 12px 90px;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 4px;
+}

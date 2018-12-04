@@ -1,0 +1,42 @@
+
+.ul{
+	display: flex;	
+	text-align: center;
+}
+.ul li{
+	flex: 1;
+	padding: 12px 0;
+}
+.select{
+	border-bottom: 2px solid #A49053;
+}
+/*margin*/
+.margTop2{
+	margin-top: 40px;
+}
+/*图片*/
+.img{
+	width: 90px;
+}
+.flx{
+	display: flex;
+}
+.txt{
+	margin-left: 10px;
+	flex: 1;
+}
+/*取消订单  立即付款*/
+.butt{
+	padding: 8px 10px;
+	border-radius: 4px;
+}
+.butt1{
+	background: #fff;
+	color: #000;
+	border: 1px solid #303549;
+	margin-right: 5px;
+}
+.butt2{
+	background: #303549;
+	color: #fff;
+}

@@ -1,0 +1,303 @@
+.login-container {
+    border-bottom: thin solid rgb(247, 249, 250);
+    height: 46px;
+    line-height: 35px;
+    font-size: 13px;
+    color: #444;
+    margin: auto;
+    background: rgb(247, 249, 250);
+}
+
+.login-text {
+    padding-right: 16px;
+}
+
+.login-line {
+    width: 1px;
+    height: 15px;
+    background: #ebebeb;
+    position: relative;
+    top: 10px;
+    margin-right: 15px;
+}
+
+.nav-container {
+    height: 114px;
+    font-size: 15px;
+    color: #444;
+    margin: auto;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.nav-logo {
+	height:109px;
+	cursor: pointer;
+}
+.nav-logo img{
+	height:107px;
+}
+.col-md-2 {
+    padding: 0;
+    text-align: center;
+}
+
+.nav {
+    height: 114px;
+    line-height: 114px;
+}
+
+.nav-right > div {
+    padding: 0;
+}
+
+.time_line_box {
+    position: relative;
+    height: 80px;
+    width: 325px;
+    margin: auto;
+}
+
+.time_line {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 30px;
+    height: 2px;
+    border-bottom: 2px solid #ebebeb;
+    width: 288px;
+}
+
+.periodTitle {
+    display: inline-block;
+    width: 60px;
+    margin-left: -30px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 15px;
+    color: #ec9313;
+}
+
+.periodContent {
+    display: inline-block;
+    width: 60px;
+    margin-left: -30px;
+    position: absolute;
+    padding-top: 15px;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.periodTitle:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: -7px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 2px solid #ebebeb;
+    background-color: #ebebeb;
+}
+
+.selected:after {
+    background-color: #ec9313;
+    border-color: #ec9313;
+}
+
+.filling_line {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    height: 2px;
+    width: 288px;
+    background-color: #fc9313;
+}
+
+.time_tip {
+    width: 100%;
+    height: 100px;
+    line-height: 70px;
+    text-align: center;
+    color: #fc9313;
+    border-bottom: 1px solid #ddd;
+}
+
+.row {
+    margin: 0;
+}
+
+
+.special-content {
+    width: 1140px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.col {
+    padding: 0;
+}
+
+.sure-order-one {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.success-text {
+    margin-left: 20px;
+        font-weight: 800;
+}
+
+.sure-order-two {
+    margin-bottom: 52px;
+    margin-left: 40px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.time {
+    color: #fc9313;
+}
+
+.info-text {
+    font-size: 18px;
+    color: #333333;
+}
+
+.good-info {
+    width: 100%;
+    padding: 0 34px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 42px;
+}
+
+.good-header {
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.good-content {
+    height: 104px;
+    line-height: 104px;
+    border-bottom: 1px solid #cdcdcd;
+    font-size: 16px;
+    color: #333333;
+}
+
+.item-right {
+    text-align: right;
+}
+
+.good-content-two {
+    height: 108px;
+    line-height: 108px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.zhifubao-item {
+    display: inline-block;
+    height: 30px;
+    margin-right: 60px;
+}
+
+.choice-img {
+    margin-right: 26px;
+}
+
+.value-img {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.weixin-item {
+    display: inline-block;
+    height: 30px;
+}
+
+.good-group {
+    height: 100px;
+}
+
+.sub-order {
+    width: 162px;
+    height: 46px;
+    line-height: 30px;
+    background: #fc9313;
+    border: 1px solid #fc9313;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 0;
+    margin-right: 34px;
+}
+
+.sub-order:hover {
+    background: #fc9313;
+    border: 1px solid #fc9313;
+    color: #fff;
+}
+
+.footer {
+    width: 100%;
+    height: 328px;
+}
+
+.zhifu-title {
+    font-size: 18px;
+    color: #333333;
+    width: 315px;
+    margin: auto;
+    text-align: left;
+}
+.zhifu-item {
+    font-size: 16px;
+    color: #999999;
+    width: 315px;
+    margin: auto;
+    text-align: left;
+}
+.weixin-header{
+    padding:4px 15px;
+    border-bottom: 1px solid #0092da;
+}
+.weixin-header-item{
+    color: #0092da;
+    font-size: 15px;
+    outline: none;
+}
+.weixin-close{
+    color: #0092da;
+    font-size: 25px;
+    outline: none;
+}
+.weixin-close:hover{
+    color: #0092da;
+    font-size: 25px;
+    outline: none;
+}
+.weixin-body{
+    margin: auto;
+    text-align: center;
+    padding: 25px;
+}
+.weixin-title {
+    font-size: 14px;
+    color: #333333;
+}
+.weixin-scanner {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 10px;
+}

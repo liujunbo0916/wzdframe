@@ -1,0 +1,35 @@
+.ul{
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+.ul li{
+	flex: 0 0 47%;
+	margin:10px 0 0 2%;		
+	padding: 20pX 30px 10px;
+	text-align: center;
+	box-sizing: border-box;
+	background: #fff;
+	border-radius: 4px;
+}
+.ul li img{
+	border-radius:50%;
+}
+h2{
+	margin: 10px 0 5px;
+}
+.btn{
+	display: inline-block;
+	padding: 5px 8px;
+	margin-top: 15px;
+	border: 1px solid #A5A5A5;
+	border-radius: 4px;
+}
+.txt{
+	padding: 8px 6px; 
+}
+.linetr{
+	text-decoration: line-through;
+	color: #999999;
+}
+

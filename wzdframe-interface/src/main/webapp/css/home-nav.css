@@ -1,0 +1,62 @@
+nav{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: .26rem;
+	padding-bottom: .06rem;
+	background: #fefefe;
+	border-top: 1px solid #ababab;
+	z-index: 999;
+}
+nav ul{
+	display: flex;
+}
+nav ul li{
+	flex: 1;
+	text-align: center;
+}
+nav .icon{
+	width: .52rem;
+	height: .52rem;
+	display: inline-block;
+}
+/*选中图标*/
+.select_icon_shouy{
+	background: url(../img/shouye-xuanzhong@2x.png);
+	background-size: contain; 
+}
+.select_icon_quanz{
+	background: url(../img/quanzi-xuanzhong@2x.png);
+	background-size: contain;
+}
+.select_icon_gouwc{
+	background: url(../img/gouwuche-xuanzhong@2x.png);
+	background-size: contain;
+}
+.select_icon_wod{
+	background: url(../img/wode-xuanzhong@2x.png);
+	background-size: contain;
+}
+/*普通图标*/
+.icon_shouy{
+	background: url(../img/shouye@2x.png);
+	background-size: contain;
+}
+.icon_quanz{
+	background: url(../img/quanzi@2x.png);
+	background-size: contain;
+}
+.icon_gouwc{
+	background: url(../img/gouwuche@2x.png);
+	background-size: contain;
+}
+.icon_wod{
+	background: url(../img/wode@2x.png);
+	background-size: contain;
+}
+/*空盒子*/
+.box{
+	height: 1.6rem;
+    background: #fff;
+}     

@@ -1,0 +1,118 @@
+.login-container {
+    border-bottom: thin solid rgb(247,249,250);
+    height: 46px;
+    line-height: 35px;
+    font-size: 13px;
+    color: #444;
+    margin: auto;
+    background: rgb(247,249,250);
+}
+.login-text{
+    padding-right: 16px;
+}
+.login-line{
+    width: 1px;
+    height: 15px;
+    background: #cdcdcd;
+    position: relative;
+    top: 10px;
+    margin-right: 15px;
+}
+.nav-container {
+    height: 114px;
+    line-height: 114px;
+    font-size: 15px;
+    color: #444;
+    margin: auto;
+    border-bottom: 1px solid #ebebeb;
+}
+.nav-logo {
+	height:109px;
+	cursor: pointer;
+}
+.nav-logo img{
+	height:107px;
+}
+.col-md-2 {
+    padding: 0;
+    text-align: center;
+}
+
+.nav {
+    height: 114px;
+    line-height: 114px;
+}
+.nav-right > div{
+    padding: 0;
+}
+.nav-link {
+    display: block;
+    padding: 0;
+    color: #444;
+    margin-right: 36px;
+}
+.nav-link.active {
+    border-bottom: 3px solid rgb(243, 133, 15);
+    color: rgb(243, 133, 15);
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    top: 1px;
+}
+a:active,a:focus{
+    text-decoration: none !important;
+}
+.nav-link:active,.nav-link:focus{
+    color: rgb(243, 133, 15);
+    border-bottom: 3px solid rgb(243, 133, 15);
+    text-decoration: none !important;
+    outline: none;
+}
+.service-dropdown,.feature-dropdown{
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 6em !important;
+    border-radius: 0;
+}
+.service-item,.feature-item{
+    padding: 0 12px;
+    margin: 30px 0;
+    height: 35px;
+    line-height: 35px;
+}
+.nav-link:hover ,.btn-group:hover{
+    color: rgb(243, 133, 15);
+    cursor: pointer;
+}
+.service-nav {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: thin solid #cdcdcd;
+    width: inherit;
+    margin: auto;
+}
+
+.service-nav-right > div {
+    padding: 0;
+    font-size: 14px;
+}
+
+.service-nav-right .active, .service-color-text {
+    color: rgb(243, 133, 15);
+    font-size: 14px;
+}
+
+.service-text {
+    font-size: 14px;
+}
+.row{
+    margin: 0;
+}
+.col{
+    padding: 0;
+}
+.body-footer{
+    height: 200px;
+    width:100%;
+    background: #444;
+}

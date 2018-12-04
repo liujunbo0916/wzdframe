@@ -1,0 +1,78 @@
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+#allmap{width: 100%;height: 75%;}
+.icon_voice{
+	width: 10%;
+    height: 6%;
+    border-radius: 4px;
+    background: #FFF;
+    position: absolute;
+    top: 56%;
+    left: 10px;
+    padding: 6px;
+    box-shadow: 1px 1px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.icon_bs{
+	width: 10%;
+    border-radius: 4px;
+    background: #FFF;
+    position: absolute;
+    top: 56%;
+    right: 10px;
+    padding: 4px;
+    box-shadow: 1px 1px 12px rgba(0,0,0,0.3);
+}
+.icon_bs a{
+	width: 100%;
+	height: 5%;
+	text-align: center;
+	display: block;
+	font-size: 200%;
+	cursor: pointer;
+}
+.icon_bs a:first-child{
+	border-bottom: 1px solid #ececec;
+}
+.container{
+	height: 25%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: -1px 1px 15px rgba(0,0,0,0.5);
+    overflow: hidden;
+    padding: 12px 15px;
+}
+.list-left{
+	float: left;
+}
+.list-left span{
+	width: 24px;
+	height: 24px;
+	background: url(../img/weizhi.png);
+	background-size: contain;
+	display: inline-block;
+	float: left;
+	margin-right: 12px;
+}
+.list-left h2{
+	font-size: 124%;
+	color: #454553;
+	float: left;
+}
+.right-box{
+	float: right;
+}
+.icon{
+	width: 18px;
+	margin: 0 auto;
+}
+.right-box p{
+	font-size: 78%;
+	color: #666;
+}
+.text{
+	font-size: 90%;
+	color: #666666;
+	margin-top: 8px;
+}

@@ -1,0 +1,23 @@
+.flxul{
+	display: flex;
+	text-align: center;
+}
+.flxul li{
+	flex: 1;
+	padding: 10px 0;
+}
+.con{
+	padding: 10px 20px;
+}
+.select{
+	border-bottom: 1px solid #A79251;
+}
+.box{
+	height: 60px;
+}
+.disnon{
+	display: none;
+}
+.cont{
+	margin-top: 10px;
+}

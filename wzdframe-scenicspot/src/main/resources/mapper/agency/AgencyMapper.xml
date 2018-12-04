@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.AgencyMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+
+	<!-- 导游信息 -->
+	<sql id="agencycondition">
+		<if test="pd.agency_id != null">
+			and agency_id = #{pd.agency_id}
+		</if>
+		<if test="pd.agency_name != null and pd.agency_name != ''">
+			and agency_name like CONCAT(CONCAT('%',
+			#{pd.agency_name}),'%')
+		</if>
+		<if test="pd.agency_show_name != null and pd.agency_show_name != ''">
+			and agency_show_name like CONCAT(CONCAT('%',
+			#{pd.agency_show_name}),'%')
+		</if>
+		<if test="pd.agency_slogan != null and pd.agency_slogan != ''">
+			and agency_slogan = #{pd.agency_slogan}
+		</if>
+		<if test="pd.agency_logo != null and pd.agency_logo != ''">
+			and agency_logo = #{pd.agency_logo}
+		</if>
+		<if test="pd.agency_permit != null and pd.agency_permit != ''">
+			and agency_permit = #{pd.agency_permit}
+		</if>
+		<if test="pd.agency_license != null and pd.agency_license != ''">
+			and agency_license = #{pd.agency_license}
+		</if>
+		<if test="pd.agency_license_img != null and pd.agency_license_img != ''">
+			and agency_license_img = #{pd.agency_license_img}
+		</if>
+		<if test="pd.agency_stars != null and pd.agency_stars != ''">
+			and agency_stars = #{pd.agency_stars}
+		</if>
+		<if test="pd.agency_phone != null and pd.agency_phone != ''">
+			and agency_phone = #{pd.agency_phone}
+		</if>
+		<if
+			test="pd.agency_province_code != null and pd.agency_province_code != ''">
+			and agency_province_code = #{pd.agency_province_code}
+		</if>
+		<if test="pd.agency_province != null and pd.agency_province != ''">
+			and agency_province = #{pd.agency_province}
+		</if>
+		<if test="pd.agency_city_code != null and pd.agency_city_code != ''">
+			and agency_city_code = #{pd.agency_city_code}
+		</if>
+		<if test="pd.agency_city != null and pd.agency_city != ''">
+			and agency_city = #{pd.agency_city}
+		</if>
+		<if test="pd.agency_area_code != null and pd.agency_area_code != ''">
+			and agency_area_code = #{pd.agency_area_code}
+		</if>
+		<if test="pd.agency_area != null and pd.agency_area != ''">
+			and agency_area = #{pd.agency_area}
+		</if>
+		<if test="pd.agency_address != null and pd.agency_address != ''">
+			and agency_address = #{pd.agency_address}
+		</if>
+		<if test="pd.agency_status != null and pd.agency_status != ''">
+			and agency_status = #{pd.agency_status}
+		</if>
+		<if test="pd.agency_create_time != null and pd.agency_create_time != ''">
+			and agency_create_time = #{pd.agency_create_time}
+		</if>
+	</sql>
+
+	<select id="selectByMap" resultType="pd" parameterType="page">
+		select * from t_travel_agency where 1 = 1
+		<include refid="agencycondition"></include>
+	</select>
+
+	<select id="selectByListPage" resultType="pd" parameterType="page">
+		select * from t_travel_agency where 1 = 1
+		<include refid="agencycondition"></include>
+		order by
+	</select>
+
+	<select id="selectByPage" resultType="pd" parameterType="page">
+		select * from t_travel_agency where 1 = 1
+		<include refid="agencycondition"></include>
+	</select>
+
+	<select id="selectById" resultType="pd" parameterType="Integer">
+		select *
+		from t_travel_agency where 1 = 1 and agency_id =#{agency_id}
+	</select>
+
+	<insert id="insert" parameterType="pd">
+		insert into t_travel_agency
+		(agency_name,agency_show_name,agency_slogan,agency_logo,agency_permit,agency_license,agency_license_img,agency_stars,agency_phone,agency_province_code,
+		agency_province,agency_city_code,agency_city,agency_area_code,agency_area,agency_address,agency_status,agency_create_time)
+		values(#{agency_name},#{agency_show_name},#{agency_slogan},#{agency_logo},#{agency_permit},#{agency_license},#{agency_license_img},#{agency_stars},#{agency_phone},#{agency_province_code},
+		#{agency_province},#{agency_city_code},#{agency_city},#{agency_area_code},#{agency_area},#{agency_address},#{agency_status},#{agency_create_time})
+	</insert>
+
+	<update id="update" parameterType="pd">
+		update t_travel_agency
+		<set>
+			<if test="agency_name != null and agency_name != ''">
+				agency_name = #{agency_name},
+			</if>
+			<if test="agency_show_name != null">
+				agency_show_name = #{agency_show_name},
+			</if>
+			<if test="agency_slogan != null">
+				agency_slogan = #{agency_slogan},
+			</if>
+			<if test="agency_logo != null and agency_logo != ''">
+				agency_logo = #{agency_logo},
+			</if>
+			<if test="agency_permit != null and hotel_img != ''">
+				agency_permit = #{agency_permit},
+			</if>
+			<if test="agency_license != null and agency_license != ''">
+				agency_license = #{agency_license},
+			</if>
+			<if test="agency_license_img != null and agency_license_img != ''">
+				agency_license_img = #{agency_license_img},
+			</if>
+			<if test="agency_stars != null and agency_stars != ''">
+				agency_stars = #{agency_stars},
+			</if>
+			<if test="agency_phone != null and agency_phone != ''">
+				agency_phone = #{agency_phone},
+			</if>
+			<if test="agency_province_code != null and agency_province_code != ''">
+				agency_province_code = #{agency_province_code},
+			</if>
+			<if test="agency_province != null and agency_province != ''">
+				agency_province = #{agency_province},
+			</if>
+			<if test="agency_city_code != null and agency_city_code != ''">
+				agency_city_code = #{agency_city_code},
+			</if>
+			<if test="agency_city != null and agency_city != ''">
+				agency_city = #{agency_city},
+			</if>
+			<if test="agency_area_code != null and agency_area_code != ''">
+				agency_area_code = #{agency_area_code},
+			</if>
+			<if test="agency_area != null and agency_area != ''">
+				agency_area = #{agency_area},
+			</if>
+			<if test="agency_address != null and agency_address != ''">
+				agency_address = #{agency_address},
+			</if>
+			<if test="agency_status != null and agency_status != ''">
+				agency_status = #{agency_status},
+			</if>
+			<if test="agency_create_time != null and agency_create_time != ''">
+				agency_create_time = #{agency_create_time},
+			</if>
+		</set>
+		where agency_id = #{agency_id}
+	</update>
+
+	<delete id="delete" parameterType="pd">
+		delete from t_travel_agency
+		where 1=1 and agency_id = #{agency_id}
+	</delete>
+
+
+	<!-- 导游信息 -->
+	<sql id="guidercondition">
+		<if test="pd.guider_id != null">
+			and guider_id = #{pd.guider_id}
+		</if>
+		<if test="pd.guider_name != null and pd.guider_name != ''">
+			and guider_name like CONCAT(CONCAT('%',
+			#{pd.guider_name}),'%')
+		</if>
+		<if test="pd.guider_logo != null and pd.guider_logo != ''">
+			and guider_logo = #{pd.guider_logo}
+		</if>
+		<if test="pd.guider_nickname != null and pd.guider_nickname != ''">
+			and guider_nickname like CONCAT(CONCAT('%',
+			#{pd.guider_nickname}),'%')
+		</if>
+		<if test="pd.guider_propaganda != null and pd.guider_propaganda != ''">
+			and guider_propaganda = #{pd.guider_propaganda}
+		</if>
+		<if test="pd.guider_lable != null and pd.guider_lable != ''">
+			and guider_lable = #{pd.guider_lable}
+		</if>
+		<if test="pd.agency_id != null and pd.agency_id != ''">
+			and t_travel_guider.agency_id = #{pd.agency_id}
+		</if>
+		<if test="pd.guider_desc != null and pd.guider_desc != ''">
+			and guider_desc = #{pd.guider_desc}
+		</if>
+		<if test="pd.guider_service_num != null and pd.guider_service_num != ''">
+			and guider_service_num = #{pd.guider_service_num}
+		</if>
+		<if test="pd.guider_score != null and pd.guider_score != ''">
+			and guider_score = #{pd.guider_score}
+		</if>
+		<if test="pd.guider_mobile != null and pd.guider_mobile != ''">
+			and guider_mobile = #{pd.guider_mobile}
+		</if>
+		<if test="pd.guider_disabled != null and pd.guider_disabled != ''">
+			and guider_disabled = #{pd.guider_disabled}
+		</if>
+		<if test="pd.guider_create_time != null and pd.guider_create_time != ''">
+			and guider_create_time = #{pd.guider_create_time}
+		</if>
+		<if test="pd.guider_price != null and pd.guider_price != ''">
+			and guider_price = #{pd.guider_price}
+		</if>
+	</sql>
+
+	<select id="selectGuiderByMap" resultType="pd" parameterType="page">
+		select * from t_travel_guider where 1 = 1
+		<include refid="guidercondition"></include>
+	</select>
+	<select id="selectGuiderByListPage" resultType="pd"
+		parameterType="page">
+		SELECT
+		t_travel_guider.*, t_travel_agency.agency_name,
+		t_travel_agency.agency_show_name
+		FROM
+		t_travel_guider
+		LEFT JOIN
+		t_travel_agency ON t_travel_guider.agency_id =
+		t_travel_agency.agency_id
+		where 1=1
+		<include refid="guidercondition"></include>
+		<if test="pd.order != null and pd.order != ''">
+			order by guider_score desc,guider_create_time desc
+		</if>
+	</select>
+	<select id="selectGuiderByPage" resultType="pd" parameterType="page">
+		select * from t_travel_guider where 1 = 1
+		<include refid="guidercondition"></include>
+	</select>
+
+	<select id="selectGuiderById" resultType="pd" parameterType="Integer">
+		select t_travel_guider.*, t_travel_agency.agency_show_name from
+		t_travel_guider LEFT JOIN t_travel_agency on
+		t_travel_guider.agency_id=t_travel_agency.agency_id where 1 = 1 and
+		guider_id
+		=#{guider_id}
+	</select>
+
+	<insert id="insertGuider" parameterType="pd">
+		insert into
+		t_travel_guider
+		(guider_name,guider_logo,guider_nickname,guider_propaganda,guider_lable,agency_id,guider_desc,guider_service_num,
+		guider_score,guider_mobile,guider_disabled,guider_create_time,guider_price,guider_bglogo)
+		values(#{guider_name},#{guider_logo},#{guider_nickname},#{guider_propaganda},#{guider_lable},#{agency_id},#{guider_desc},#{guider_service_num},
+		#{guider_score},#{guider_mobile},#{guider_disabled},#{guider_create_time},#{guider_price},#{guider_bglogo})
+	</insert>
+
+	<update id="updateGuider" parameterType="pd">
+		update t_travel_guider
+		<set>
+			<if test="guider_name != null and guider_name != ''">
+				guider_name = #{guider_name},
+			</if>
+			<if test="guider_logo != null and guider_logo != ''">
+				guider_logo = #{guider_logo},
+			</if>
+			<if test="guider_nickname != null and guider_nickname != ''">
+				guider_nickname = #{guider_nickname},
+			</if>
+			<if test="guider_propaganda != null and guider_propaganda != ''">
+				guider_propaganda = #{guider_propaganda},
+			</if>
+			<if test="guider_lable != null and guider_lable != ''">
+				guider_lable = #{guider_lable},
+			</if>
+			<if test="agency_id != null and agency_id != ''">
+				agency_id = #{agency_id},
+			</if>
+			<if test="guider_desc != null and guider_desc != ''">
+				guider_desc = #{guider_desc},
+			</if>
+			<if test="guider_service_num != null and guider_service_num != ''">
+				guider_service_num = #{guider_service_num},
+			</if>
+			<if test="guider_score != null and guider_score != ''">
+				guider_score = #{guider_score},
+			</if>
+			<if test="guider_mobile != null and guider_mobile != ''">
+				guider_mobile = #{guider_mobile},
+			</if>
+			<if test="guider_disabled != null and guider_disabled != ''">
+				guider_disabled = #{guider_disabled},
+			</if>
+			<if test="guider_create_time != null and guider_create_time != ''">
+				guider_create_time = #{guider_create_time},
+			</if>
+			<if test="guider_price != null and guider_price != ''">
+				guider_price = #{guider_price},
+			</if>
+			<if test="guider_bglogo != null and guider_bglogo != ''">
+				guider_bglogo = #{guider_bglogo},
+			</if>
+			
+		</set>
+		where guider_id = #{guider_id}
+	</update>
+
+	<delete id="deleteGuider" parameterType="pd">
+		delete from
+		t_travel_guider where 1=1 and guider_id = #{guider_id}
+	</delete>
+</mapper>

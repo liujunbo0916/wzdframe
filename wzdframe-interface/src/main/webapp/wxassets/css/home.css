@@ -1,0 +1,43 @@
+
+/*图标*/
+.icon{
+	margin: 10px 0;
+	color: #757575;
+}
+.icon ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.icon ul li{
+	flex: 0 0 25%;	
+	padding:15px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+/*图标*/
+
+/*系列*/
+.series{
+	width: 96%;
+	margin: 0 auto 5px;
+	position: relative;
+}
+.serie{
+	font-size: 1.4rem;
+	color: #fff;
+	border: 1px solid #fff;
+	display: inline-block;
+	padding: 10px 20px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  	/*垂直水平居中*/
+}
+/*系列*/
+
+@media (max-device-width:320px) and (-webkit-min-device-pixel-ratio:2) {
+	.icon p{
+		font-size: 12px;
+	}
+}

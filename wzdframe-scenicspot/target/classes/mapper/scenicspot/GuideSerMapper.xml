@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.GuideSerMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<insert id="insert" parameterType="pd">
+		insert into
+		t_guide_service(user_id,con_phone,person_number,book_time,con_name,book_address,create_time,guide_status,guider,guider_id,order_sn,pay_type)
+		values(#{user_id},#{con_phone},#{person_number},#{book_time},#{con_name},#{book_address},#{create_time},#{guide_status},#{guider},#{guider_id},#{order_sn},#{pay_type})
+		<selectKey resultType="java.lang.Integer" keyProperty="id"
+			order="AFTER">
+			SELECT @@IDENTITY
+		</selectKey>
+	</insert>
+	<select id="selectByPage" parameterType="pd" resultType="pd">
+		select t1.*,t2.nick_name,t2.headimgurl from t_guide_service t1 left join
+		t_user t2 on t1.user_id = t2.user_id where 1= 1
+		order by create_time desc
+	</select>
+	<select id="selectByMap" parameterType="pd" resultType="pd">
+		select
+		t_guide_service.*,t_travel_guider.*
+		from t_guide_service LEFT JOIN t_travel_guider on
+		t_guide_service.guider_id =t_travel_guider.guider_id where 1= 1
+		<if test="pd.id != null and pd.id != ''">
+			and id = #{pd.id}
+		</if>
+		<if test="pd.user_id != null and pd.user_id != ''">
+			and user_id = #{pd.user_id}
+		</if>
+		<if test="pd.guider_id != null and pd.guider_id != ''">
+			and guider_id=#{pd.guider_id}
+		</if>
+		order by create_time desc
+	</select>
+	<select id="selectById" parameterType="Integer" resultType="pd">
+		select
+		t_guide_service.*,t_travel_guider.*
+		from t_guide_service LEFT JOIN t_travel_guider on
+		t_guide_service.guider_id =t_travel_guider.guider_id where 1= 1
+		and id = #{id}
+	</select>
+	<select id="selectByOrderSn" parameterType="String" resultType="pd">
+		select
+		t_guide_service.*
+		from t_guide_service  where 1= 1
+		and order_sn = #{order_sn}
+	</select>
+	
+	<update id="update" parameterType="pd">
+		update t_guide_service
+		<set>
+			<if test="con_phone != null and con_phone != ''">
+				con_phone = #{con_phone},
+			</if>
+			<if test="person_number != null and person_number != ''">
+				person_number = #{person_number},
+			</if>
+			<if test="con_name != null and con_name != ''">
+				con_name = #{con_name},
+			</if>
+			<if test="con_name != null and con_name != ''">
+				con_name = #{con_name},
+			</if>
+			<if test="book_address != null and book_address != ''">
+				book_address = #{book_address},
+			</if>
+			<if test="guide_status != null and guide_status != ''">
+				guide_status = #{guide_status},
+			</if>
+			<if test="guider != null and guider != ''">
+				guider = #{guider},
+			</if>
+			<if test="guider_id != null and guider_id != ''">
+				guider_id=#{pd.guider_id},
+			</if>
+			<if test="order_sn != null and order_sn != ''">
+				order_sn=#{pd.order_sn},
+			</if>
+			<if test="pay_type != null and pay_type != ''">
+				pay_type=#{pd.pay_type},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	<delete id="delete" parameterType="pd">
+		delete from t_guide_service where id = #{pd.id}
+	</delete>
+	<delete id="deleteFeed" parameterType="pd">
+		delete from t_feedback where id = #{id}
+	</delete>
+	<select id="feedbackList" parameterType="pd" resultType="pd">
+		select * from t_feedback where user_id = #{user_id}
+	</select>
+
+	<select id="feedBackListPage" parameterType="pd" resultType="pd">
+		select t1.*,t2.nick_name,t2.headimgurl from t_feedback t1 left join
+		t_user t2 on t1.user_id = t2.user_id
+		order by create_time desc
+	</select>
+	<update id="updateFeed" parameterType="pd">
+		update t_feedback
+		<set>
+			<if test="status != null and status != ''">
+				status = #{status},
+			</if>
+			<if test="replay != null and replay != ''">
+				replay = #{replay},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	<!-- 插入反馈 -->
+	<insert id="insertFeedBack" parameterType="pd">
+		insert into t_feedback(title,content,imgs,user_id,status,create_time)
+		values(#{title},#{content},#{imgs},#{user_id},1,#{create_time})
+	</insert>
+</mapper>

@@ -1,0 +1,111 @@
+.register-img{
+    width: 100%;
+    height: 100%;
+}
+.row{
+    padding: 0;
+    margin: 0;
+}
+.row > div{
+    padding: 0;
+}
+.register-content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 1px solid #fff;
+    height: 253px;
+    background: #fff;
+    border-radius: 5px;
+    width: 370px;
+    right: 0;
+    top: 0;
+    margin: auto;
+}
+.register-row {
+    width: 318px;
+    margin: auto!important;
+    border-bottom: 1px solid #ebebeb;
+    margin-top: 50px!important;
+}
+.register-item {
+    width: 318px;
+    height: 40px;
+    margin-bottom: 12px;
+}
+.register-choice{
+    width: 318px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+}
+.register-select{
+    width: 318px;
+    margin: auto;
+    font-size: 14px;
+    color: #333333;
+    height: 40px;
+    line-height: 40px;
+
+}
+.register-button{
+    width: 318px;
+    height: 46px;
+    margin-bottom: 12px;
+}
+.register-item input{
+    width: 318px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999999;
+    padding: 0;
+    padding-left: 20px;
+    outline: none;
+
+}
+.col-item-one{
+    max-width: 188px;
+    height: 40px;
+}
+.col-item-two{
+    max-width: 120px;
+    height: 40px;
+    margin-left: 10px;
+}
+.token-input{
+    min-width: 180px;
+    width: 188px !IMPORTANT;
+}
+.send-token{
+    width: 120px;
+    color: #fc9313;
+    background: #fff;
+    border: 1px solid #fc9313;
+    font-size: 14px;
+    height: 40px;
+
+
+}
+.register-btn {
+    height: 46px;
+    width: 318px;
+    color: #fff;
+    background: #fc9313;
+    border: 1px solid #fc9313;
+    line-height: 30px;
+    font-size: 18px;
+}
+.register-btn:hover{
+    color: #fff;
+    background: #fc9313;
+    border: 1px solid #fc9313;
+}
+.register-text-one{
+    color: #999999;
+    font-size: 12px;
+}
+.register-text{
+    color: #fc9313;
+    font-size: 12px;
+}

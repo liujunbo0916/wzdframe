@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="false" /><!-- 全局映射器启用缓存 -->   
+        <setting name="useGeneratedKeys" value="true" /> 
+        <setting name="defaultExecutorType" value="REUSE" /> 
+    </settings>
+
+	<typeAliases>
+		<typeAlias type="com.easaa.entity.PageData" alias="pd"/>
+		<typeAlias type="com.easaa.entity.Page" alias="page"/>
+		<typeAlias type="com.easaa.scenicspot.entity.PageExtend" alias="pageExt"/>
+		<typeAlias type="com.easaa.goods.entity.Stock" alias="stock"/>
+		<typeAlias type="com.easaa.goods.entity.GoodsAttr" alias="goodsAttr"/>
+		<!-- 权限实体 -->
+		<typeAlias type="com.easaa.entity.Dictionaries" alias="Dictionaries"/>
+		<typeAlias type="com.easaa.entity.Department" alias="Department"/>
+		<typeAlias type="com.easaa.entity.Department" alias="Department"/>
+		<typeAlias type="com.easaa.upm.entity.Admin" alias="Admin"/>
+		<typeAlias type="com.easaa.upm.entity.Menu" alias="Menu"/>
+		<typeAlias type="com.easaa.upm.entity.Role" alias="Role"/>
+		<typeAlias type="com.easaa.upm.entity.Log" alias="log"/>
+			<!-- 商家实体 -->
+		<typeAlias type="com.easaa.scenicspot.entity.Business" alias="business"/>
+		<typeAlias type="com.easaa.scenicspot.entity.Member" alias="member"/>
+		<typeAlias type="com.easaa.scenicspot.entity.Seller" alias="seller"/>
+	</typeAliases>
+	
+	 <plugins>
+		<plugin interceptor="com.easaa.plugin.PagePlugin">
+			<property name="dialect" value="mysql"/>
+			<property name="pageSqlId" value=".*Page.*"/>
+		</plugin>
+	</plugins> 
+	
+</configuration>

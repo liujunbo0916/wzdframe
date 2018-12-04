@@ -1,0 +1,53 @@
+.duyun-body-footer{
+    height: 328px;
+    width:100%;
+    background: #444;
+}
+.row{
+    margin: 0;
+}
+.col{
+    padding: 0;
+}
+.duyun-footer-item {
+    width: 900px;
+    margin: auto;
+    border-bottom: 1px solid #fff;
+}
+.duyun-footer-title {
+    margin-top: 44px;
+    margin-bottom: 38px;
+    color: #fff;
+    font-size: 18px;
+}
+.duyun-item {
+    margin-bottom: 22px;
+    margin-right: 14px;
+}
+img.duyun-item-img {
+    width: 20px;
+    height: 20px;
+}
+.duyun-item-text {
+    font-size: 18px;
+    color: #fff;
+}
+.duyun-scanner-img {
+    width: 150px;
+    height: 150px;
+    margin-top: 42px;
+    margin-bottom: 12px;
+}
+.duyun-item-one{
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.duyun-item-two{
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+    color: #ffffff;
+}

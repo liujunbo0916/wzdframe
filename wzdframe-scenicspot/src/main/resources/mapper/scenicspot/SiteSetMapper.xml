@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.SiteSetMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<!-- 代金券 -->
+	<select id="selectAll" resultType="pd" parameterType="page">
+		  select * from t_site_set where id = 1
+	</select>
+	<update id="update"  parameterType="pd">
+	   update t_site_set 
+	   <set>
+		   <if test="about_us != null and about_us != ''">
+		        about_us   = #{about_us}
+		   </if>
+		   <if test="safe_know != null and safe_know != ''">
+		       safe_know  = #{safe_know}
+		   </if>
+		   <if test="book_know != null and book_know != ''">
+		       book_know  = #{book_know}
+		   </if>
+	   </set>
+	   where id = 1
+	</update>
+</mapper>

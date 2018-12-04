@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.GroupTourMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<!-- 跟团游 -->
+	<sql id="condition">
+		<if test="pd.grouptour_id != null and pd.grouptour_id != ''">
+			and grouptour_id = #{pd.grouptour_id}
+		</if>
+		<if test="pd.grouptour_name != null and pd.grouptour_name != ''">
+			and grouptour_name = #{pd.grouptour_name}
+		</if>
+		<if test="pd.grouptour_price != null and pd.grouptour_price != ''">
+			and grouptour_price = #{pd.grouptour_price}
+		</if>
+		<if test="pd.childs_price != null and pd.childs_price != ''">
+			and childs_price = #{pd.childs_price}
+		</if>
+		<if test="pd.grouptour_img != null and pd.grouptour_img != ''">
+			and grouptour_img = #{pd.grouptour_img}
+		</if>
+		<if test="pd.hotel_starlevel != null and pd.hotel_starlevel != ''">
+			and hotel_starlevel = #{pd.hotel_starlevel}
+		</if>
+		<if test="pd.grouptour_tab != null and pd.grouptour_tab != ''">
+			and grouptour_tab = #{pd.grouptour_tab}
+		</if>
+		<if test="pd.grouptour_phone != null and pd.grouptour_phone != ''">
+			and grouptour_phone = #{pd.grouptour_phone}
+		</if>
+		<if test="pd.grouptour_sales != null and pd.grouptour_sales != ''">
+			and grouptour_sales = #{pd.grouptour_sales}
+		</if>
+		<if test="pd.grouptour_limited != null and pd.grouptour_limited != ''">
+			and grouptour_limited = #{pd.grouptour_limited}
+		</if>
+		<if test="pd.grouptour_sketch != null and pd.grouptour_sketch != ''">
+			and grouptour_sketch = #{pd.grouptour_sketch}
+		</if>
+		<if test="pd.grouptour_character != null and pd.grouptour_character != ''">
+			and grouptour_character = #{pd.grouptour_character}
+		</if>
+		<if test="pd.grouptour_trip != null and pd.grouptour_trip != ''">
+			and grouptour_trip = #{pd.grouptour_trip}
+		</if>
+		<if test="pd.grouptour_statement != null and pd.grouptour_statement != ''">
+			and grouptour_statement = #{pd.grouptour_statement}
+		</if>
+		<if test="pd.grouptour_attention != null and pd.grouptour_attention != ''">
+			and grouptour_attention = #{pd.grouptour_attention}
+		</if>
+		<if test="pd.grouptour_day != null and pd.grouptour_day != ''">
+			and grouptour_day = #{pd.grouptour_day}
+		</if>
+		<if test="pd.grouptour_state != null and pd.grouptour_state != ''">
+			and grouptour_state = #{pd.grouptour_state}
+		</if>
+		<if test="pd.agency_id != null and pd.agency_id != ''">
+			and agency_id = #{pd.agency_id}
+		</if>
+		<if test="pd.create_time != null and pd.create_time != ''">
+			and create_time = #{pd.create_time}
+		</if>
+	</sql>
+	<select id="selectByMap" resultType="pd" parameterType="page">
+		select
+		grouptour_id,grouptour_name,grouptour_price,childs_price,grouptour_img,grouptour_tab,grouptour_phone,grouptour_sales,
+		grouptour_limited,grouptour_sketch,grouptour_day,grouptour_state,childs_price,agency_id
+		from t_grouptour where 1 = 1
+		<include refid="condition"></include>
+		order by create_time desc
+		<if test="pd.limit != null and pd.limit != ''">
+			limit #{pd.limit}
+		</if>
+	</select>
+
+	<select id="selectByPage" resultType="pd" parameterType="page">
+		select
+		grouptour_id,grouptour_name,grouptour_price,childs_price,grouptour_img,grouptour_tab,grouptour_phone,grouptour_sales,
+		grouptour_limited,grouptour_sketch,grouptour_day,grouptour_state,t_grouptour.agency_id,t_travel_agency.agency_show_name
+		from t_grouptour LEFT JOIN t_travel_agency ON
+		t_grouptour.agency_id=t_travel_agency.agency_id where 1 = 1
+		<include refid="condition"></include>
+		order by t_grouptour.create_time desc
+	</select>
+
+	<select id="selectById" resultType="pd" parameterType="Integer">
+		select *
+		from t_grouptour where 1 = 1 and grouptour_id =#{grouptour_id}
+	</select>
+
+	<insert id="insert" parameterType="pd">
+		insert into t_grouptour
+		(grouptour_name,grouptour_price,childs_price,grouptour_tab,grouptour_phone,grouptour_sales,grouptour_limited,grouptour_sketch,grouptour_img,grouptour_character,grouptour_trip,grouptour_statement,
+		grouptour_attention,grouptour_day,grouptour_state,create_time,childs_price,agency_id)
+		values(#{grouptour_name},#{grouptour_price},#{childs_price},#{grouptour_tab},#{grouptour_phone},#{grouptour_sales},#{grouptour_limited},#{grouptour_sketch},#{grouptour_img},#{grouptour_character},#{grouptour_trip},#{grouptour_statement},
+		#{grouptour_attention},#{grouptour_day},#{grouptour_state},#{create_time},#{childs_price},#{agency_id})
+	</insert>
+
+	<update id="update" parameterType="pd">
+		update t_grouptour
+		<set>
+			<if test="grouptour_name != null and grouptour_name != ''">
+				grouptour_name = #{grouptour_name},
+			</if>
+			<if test="grouptour_price != null and grouptour_price != ''">
+				grouptour_price = #{grouptour_price},
+			</if>
+			<if test="grouptour_img != null and grouptour_img != ''">
+				grouptour_img = #{grouptour_img},
+			</if>
+			<if test="grouptour_tab != null">
+				grouptour_tab = #{grouptour_tab},
+			</if>
+			<if test="grouptour_phone != null">
+				grouptour_phone = #{grouptour_phone},
+			</if>
+			<if test="childs_price != null">
+				childs_price = #{childs_price},
+			</if>
+			<if test="grouptour_sales != null and grouptour_sales != ''">
+				grouptour_sales = #{grouptour_sales},
+			</if>
+			<if test="grouptour_limited != null ">
+				grouptour_limited = #{grouptour_limited},
+			</if>
+			<if test="grouptour_sketch != null ">
+				grouptour_sketch = #{grouptour_sketch},
+			</if>
+			<if test="grouptour_character != null ">
+				grouptour_character = #{grouptour_character},
+			</if>
+			<if test="grouptour_trip != null">
+				grouptour_trip = #{grouptour_trip},
+			</if>
+			<if test="grouptour_statement != null">
+				grouptour_statement = #{grouptour_statement},
+			</if>
+			<if test="grouptour_attention != null">
+				grouptour_attention = #{grouptour_attention},
+			</if>
+			<if test="grouptour_day != null and grouptour_day != ''">
+				grouptour_day = #{grouptour_day},
+			</if>
+			<if test="grouptour_state != null and grouptour_state != ''">
+				grouptour_state = #{grouptour_state},
+			</if>
+			<if test="childs_price != null and childs_price != ''">
+				childs_price = #{childs_price},
+			</if>
+			<if test="agency_id != null and agency_id != ''">
+				agency_id = #{agency_id},
+			</if>
+		</set>
+		where grouptour_id = #{grouptour_id}
+	</update>
+
+	<delete id="delete" parameterType="pd">
+		delete from t_grouptour where
+		1=1 and grouptour_id = #{grouptour_id}
+	</delete>
+
+
+	<!-- 出游人 -->
+	<sql id="travelerscondition">
+		<if test="pd.travelers_id != null">
+			and travelers_id = #{pd.travelers_id}
+		</if>
+		<if test="pd.travelers_name != null and pd.travelers_name != ''">
+			and travelers_name = #{pd.travelers_name}
+		</if>
+		<if test="pd.travelers_type != null and pd.travelers_type != ''">
+			and travelers_type = #{pd.travelers_type}
+		</if>
+		<if test="pd.travelers_no != null and pd.travelers_no != ''">
+			and travelers_no = #{pd.travelers_no}
+		</if>
+		<if test="pd.travelers_phone != null and pd.travelers_phone != ''">
+			and travelers_phone = #{pd.travelers_phone}
+		</if>
+		<if test="pd.travelers_gender != null and pd.travelers_gender != ''">
+			and travelers_gender = #{pd.travelers_gender}
+		</if>
+		<if test="pd.user_id != null and pd.user_id != ''">
+			and user_id = #{pd.user_id}
+		</if>
+		<if test="pd.create_time != null and pd.create_time != ''">
+			and create_time = #{pd.create_time}
+		</if>
+	</sql>
+
+	<select id="selectTravelersByMap" resultType="pd" parameterType="page">
+		select * from t_travelers where 1 = 1
+		<include refid="travelerscondition"></include>
+	</select>
+	<select id="selectTravelersByPage" resultType="pd"
+		parameterType="page">
+		select * from t_travelers where 1 = 1
+		<include refid="travelerscondition"></include>
+	</select>
+	<select id="selectTravelersListByPage" resultType="pd"
+		parameterType="page">
+		SELECT
+		t_travelers.*, t_user.user_name
+		FROM
+		t_travelers
+		LEFT JOIN t_user
+		ON t_travelers.user_id = t_user.user_id
+		WHERE
+		1 = 1
+		<include refid="travelerscondition"></include>
+	</select>
+
+	<select id="selectTravelersById" resultType="pd" parameterType="Integer">
+		select * from t_travelers where 1 = 1 and travelers_id
+		=#{travelers_id}
+	</select>
+	<select id="selectTravelersByIds" resultType="pd" parameterType="pd">
+		select * from t_travelers where 1 = 1 and travelers_id
+		in
+		(${travelers_id})
+	</select>
+	<insert id="insertTravelers" parameterType="pd">
+		insert into
+		t_travelers
+		(travelers_name,travelers_type,travelers_no,travelers_phone,travelers_gender,user_id,create_time)
+		values(#{travelers_name},#{travelers_type},#{travelers_no},#{travelers_phone},#{travelers_gender},#{user_id},#{create_time})
+	</insert>
+
+	<update id="updateTravelers" parameterType="pd">
+		update t_travelers
+		<set>
+			<if test="travelers_name != null and travelers_name != ''">
+				travelers_name = #{travelers_name},
+			</if>
+			<if test="travelers_type != null and travelers_type != ''">
+				travelers_type = #{travelers_type},
+			</if>
+			<if test="travelers_no != null and travelers_no != ''">
+				travelers_no = #{travelers_no},
+			</if>
+			<if test="travelers_gender != null and travelers_gender != ''">
+				travelers_gender = #{travelers_gender},
+			</if>
+			<if test="travelers_phone != null and travelers_phone != ''">
+				travelers_phone = #{travelers_phone},
+			</if>
+			<if test="user_id != null and user_id != ''">
+				user_id = #{user_id},
+			</if>
+			<if test="create_time != null and create_time != ''">
+				create_time = #{create_time},
+			</if>
+		</set>
+		where travelers_id = #{travelers_id}
+	</update>
+
+	<delete id="deleteTravelers" parameterType="pd">
+		delete from
+		t_travelers where 1=1 and travelers_id = #{travelers_id}
+	</delete>
+
+
+	<!-- 线路订单 -->
+	<sql id="ordercondition">
+		<if test="pd.order_id != null">
+			and order_id = #{pd.order_id}
+		</if>
+		<if test="pd.order_sn != null and pd.order_sn != ''">
+			and order_sn = #{pd.order_sn}
+		</if>
+		<if test="pd.grouptour_id != null and pd.grouptour_id != ''">
+			and grouptour_id = #{pd.grouptour_id}
+		</if>
+		<if test="pd.total_price != null and pd.total_price != ''">
+			and total_price = #{pd.total_price}
+		</if>
+		<if test="pd.pay_price != null and pd.pay_price != ''">
+			and pay_price = #{pd.pay_price}
+		</if>
+		<if test="pd.else_price != null and pd.else_price != ''">
+			and else_price = #{pd.else_price}
+		</if>
+		<if test="pd.adult_price != null and pd.adult_price != ''">
+			and adult_price = #{pd.adult_price}
+		</if>
+		<if test="pd.adult_num != null and pd.adult_num != ''">
+			and adult_num = #{pd.adult_num}
+		</if>
+		<if test="pd.adult_ids != null and pd.adult_ids != ''">
+			and adult_ids = #{pd.adult_ids}
+		</if>
+		<if test="pd.children_num != null and pd.children_num != ''">
+			and children_num = #{pd.children_num}
+		</if>
+		<if test="pd.children_price != null and pd.children_price != ''">
+			and children_price = #{pd.children_price}
+		</if>
+		<if test="pd.children_ids != null and pd.children_ids != ''">
+			and children_ids = #{pd.children_ids}
+		</if>
+		<if test="pd.departure_date != null and pd.departure_date != ''">
+			and departure_date = #{pd.departure_date}
+		</if>
+		<if test="pd.link_perple != null and pd.link_perple != ''">
+			and link_perple = #{pd.link_perple}
+		</if>
+		<if test="pd.link_phone != null and pd.link_phone != ''">
+			and link_phone = #{pd.link_phone}
+		</if>
+		<if test="pd.order_state != null and pd.order_state != ''">
+			and order_state = #{pd.order_state}
+		</if>
+		<if test="pd.sys_remark != null and pd.sys_remark != ''">
+			and sys_remark = #{pd.sys_remark}
+		</if>
+		<if test="pd.link_remark != null and pd.link_remark != ''">
+			and link_remark = #{pd.link_remark}
+		</if>
+		<if test="pd.pay_status != null and pd.pay_status != ''">
+			and pay_status = #{pd.pay_status}
+		</if>
+		<if test="pd.pay_type != null and pd.pay_type != ''">
+			and pay_type = #{pd.pay_type}
+		</if>
+		<if test="pd.user_id != null and pd.user_id != ''">
+			and user_id = #{pd.user_id}
+		</if>
+		<if test="pd.create_time != null and pd.create_time != ''">
+			and create_time = #{pd.create_time}
+		</if>
+	</sql>
+
+	<select id="selectOrderByMap" resultType="pd" parameterType="page">
+		select * from t_grouptour_order where 1 = 1
+		<include refid="ordercondition"></include>
+	</select>
+	<select id="selectOrderByPage" resultType="pd" parameterType="page">
+		select * from t_grouptour_order where 1 = 1
+		<include refid="ordercondition"></include>
+	</select>
+	<select id="selectOrderListByPage" resultType="pd"
+		parameterType="page">
+		SELECT
+		t_grouptour_order.*, t_user.user_name
+		FROM
+		t_grouptour_order
+		LEFT
+		JOIN t_user ON t_grouptour_order.user_id = t_user.user_id
+		WHERE
+		1 = 1
+		<include refid="ordercondition"></include>
+	</select>
+	<resultMap type="com.easaa.scenicspot.entity.GroupTourOrder"
+		id="groupTourOrder">
+		<id column="id" property="id" />
+		<result column="order_id" property="orderId" />
+		<result column="order_sn" property="orderSn" />
+		<result column="grouptour_id" property="grouptourId" />
+		<result column="grouptourName" property="grouptourName" />
+		<result column="grouptour_img" property="grouptourImg" />
+		<result column="grouptour_phone" property="grouptourPhone" />
+		<result column="total_price" property="totalPrice" />
+		<result column="pay_price" property="payPrice" />
+		<result column="adult_num" property="adultNum" />
+		<result column="adult_price" property="adultPrice" />
+		<result column="children_num" property="childrenNum" />
+		<result column="children_price" property="childrenPrice" />
+		<result column="departure_date" property="departureDate" />
+		<result column="link_perple" property="linkPerple" />
+		<result column="link_phone" property="linkPhone" />
+		<result column="order_state" property="orderState" />
+		<result column="pay_status" property="payStatus" />
+		<result column="pay_type" property="payType" />
+		<result column="create_time" property="createTime" />
+		<result column="refund_status" property="refundStatus" />
+		<result column="refund_fail_msg" property="refundMark" />
+		<result column="user_id" property="userId" />
+	<!-- 	<collection property="traveler"
+			ofType="com.easaa.scenicspot.entity.ticket.Traveler">
+			<id column="cId" property="id" />
+			<result column="oid" property="oid" />
+			<result column="name" property="name" />
+			<result column="phone" property="phone" />
+			<result column="idCard" property="idCard" />
+			<result column="type" property="type" />
+			<result column="to_refund_status" property="refundStatus"/>
+			<result column="to_apply_num" property="applyNum"/>
+		</collection> -->
+	</resultMap>
+	<resultMap type="com.easaa.scenicspot.entity.GroupTourOrder"
+		id="groupTourOrderEntity">
+		<id column="id" property="id" />
+		<result column="order_id" property="orderId" />
+		<result column="order_sn" property="orderSn" />
+		<result column="grouptour_id" property="grouptourId" />
+		<result column="grouptourName" property="grouptourName" />
+		<result column="grouptour_img" property="grouptourImg" />
+		<result column="grouptour_phone" property="grouptourPhone" />
+		<result column="total_price" property="totalPrice" />
+		<result column="pay_price" property="payPrice" />
+		<result column="adult_num" property="adultNum" />
+		<result column="adult_price" property="adultPrice" />
+		<result column="children_num" property="childrenNum" />
+		<result column="children_price" property="childrenPrice" />
+		<result column="departure_date" property="departureDate" />
+		<result column="link_perple" property="linkPerple" />
+		<result column="link_phone" property="linkPhone" />
+		<result column="order_state" property="orderState" />
+		<result column="pay_status" property="payStatus" />
+		<result column="pay_type" property="payType" />
+		<result column="create_time" property="createTime" />
+		<result column="refund_status" property="refundStatus" />
+		<result column="refund_fail_msg" property="refundMark" />
+		<result column="user_id" property="userId" />
+	 	<collection property="traveler"
+			ofType="com.easaa.scenicspot.entity.ticket.Traveler">
+			<id column="cId" property="id" />
+			<result column="oid" property="oid" />
+			<result column="name" property="name" />
+			<result column="phone" property="phone" />
+			<result column="idCard" property="idCard" />
+			<result column="type" property="type" />
+			<result column="to_refund_status" property="refundStatus"/>
+			<result column="to_apply_num" property="applyNum"/>
+		</collection> 
+	</resultMap>
+	
+	<select id="selectEntityByPage" resultMap="groupTourOrder" parameterType="page">
+		SELECT
+		t_grouptour_order.*, t_grouptour.grouptour_name as grouptourName,
+		t_grouptour.grouptour_img,
+		t_grouptour.grouptour_phone
+		<!-- t_grouptour_order_traver.id as cId,
+		t_grouptour_order_traver.to_id AS oid,
+		t_grouptour_order_traver.to_idcard AS idCard,
+		t_grouptour_order_traver.to_name AS name,
+		t_grouptour_order_traver.to_phone AS phone,
+		t_grouptour_order_traver.to_type AS type,
+		t_grouptour_order_traver.to_refund_status AS to_refund_status,
+		t_grouptour_order_traver.to_apply_num AS to_apply_num -->
+		FROM
+		t_grouptour_order
+		LEFT JOIN t_grouptour ON t_grouptour_order.grouptour_id =
+		t_grouptour.grouptour_id
+<!-- 		LEFT JOIN t_grouptour_order_traver ON t_grouptour_order.order_id =
+		t_grouptour_order_traver.to_id -->
+		where order_state != 7
+		<include refid="ordercondition"></include>
+		<if test="pd.selectType != null and pd.selectType =='no_pay'">
+			and order_state = 0
+		</if>
+		<if test="pd.selectType != null and pd.selectType =='no_use'">
+			and order_state = 1
+		</if>
+		<if test="pd.selectType != null and pd.selectType =='cancle'">
+			and (order_state = 5 or order_state = 4)
+		</if>
+		<choose>
+			<when test="pd.start_create_time != null and pd.start_create_time != ''">
+				<choose>
+					<when test="pd.end_create_time!=null and pd.end_create_time != ''">
+		             <![CDATA[
+		               and  (date_format(t_grouptour_order.create_time,'%Y-%m-%d') >= #{pd.start_create_time}
+		                    and date_format(t_grouptour_order.create_time,'%Y-%m-%d') <= #{pd.end_create_time}
+		               )
+		             ]]>
+					</when>
+					<otherwise>
+		             <![CDATA[
+		              and date_format(t_grouptour_order.create_time,'%Y-%m-%d') >= #{pd.start_create_time}
+		             ]]>
+					</otherwise>
+				</choose>
+			</when>
+			<otherwise>
+				<choose>
+					<when test="pd.end_create_time!=null and pd.end_create_time != ''">
+		             <![CDATA[
+		                    and date_format(t_grouptour_order.create_time,'%Y-%m-%d') <= #{pd.end_create_time}
+		             ]]>
+					</when>
+				</choose>
+			</otherwise>
+		</choose>
+		
+		order by create_time desc
+	</select>
+	<select id="selectOrderEntity" resultMap="groupTourOrderEntity" parameterType="pd">
+	 SELECT
+		t_grouptour_order.*, t_grouptour.grouptour_name as grouptourName,
+		t_grouptour.grouptour_img,
+		t_grouptour.grouptour_phone,
+	    t_grouptour_order_traver.id as cId,
+		t_grouptour_order_traver.to_id AS oid,
+		t_grouptour_order_traver.to_idcard AS idCard,
+		t_grouptour_order_traver.to_name AS name,
+		t_grouptour_order_traver.to_phone AS phone,
+		t_grouptour_order_traver.to_type AS type,
+		t_grouptour_order_traver.to_refund_status AS to_refund_status,
+		t_grouptour_order_traver.to_apply_num AS to_apply_num 
+		FROM
+		t_grouptour_order
+		LEFT JOIN t_grouptour ON t_grouptour_order.grouptour_id =
+		t_grouptour.grouptour_id
+ 		LEFT JOIN t_grouptour_order_traver ON t_grouptour_order.order_id =
+		t_grouptour_order_traver.to_id 
+		where  t_grouptour_order.order_id = #{order_id}
+	</select>
+	<select id="selectOrderById" resultType="pd" parameterType="Integer">
+		select * from t_grouptour_order where 1 = 1 and order_id
+		=#{order_id}
+	</select>
+    <select id="selectOrderByOrderSn" resultType="pd" parameterType="java.lang.String">
+        select * from t_grouptour_order where order_sn = #{order_sn}
+    </select>
+	<insert id="insertOrder" parameterType="pd">
+		insert into
+		t_grouptour_order
+		(order_sn,grouptour_id,total_price,pay_price,else_price,adult_num,adult_price,adult_ids,children_num,children_price,children_ids,departure_date,link_perple,link_phone,
+		link_reamrk,order_state,pay_status,pay_type,user_id,sys_remark,create_time,grouptour_name)
+		values(#{order_sn},#{grouptour_id},#{total_price},#{pay_price},#{else_price},#{adult_num},#{adult_price},#{adult_ids},#{children_num},#{children_price},#{children_ids},#{departure_date},#{link_perple},
+		#{link_phone},#{link_reamrk},#{order_state},#{pay_status},#{pay_type},#{user_id},#{sys_remark},#{create_time},#{grouptour_name})
+		<selectKey resultType="java.lang.String" order="AFTER"
+			keyProperty="order_id">
+			select LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateOrder" parameterType="pd">
+		update t_grouptour_order
+		<set>
+			<if test="grouptour_id != null and grouptour_id != ''">
+				grouptour_id = #{grouptour_id},
+			</if>
+			<if test="total_price != null and total_price != ''">
+				total_price = #{total_price},
+			</if>
+			<if test="else_price != null and else_price != ''">
+				else_price = #{else_price},
+			</if>
+			<if test="adult_num != null and adult_num != ''">
+				adult_num = #{adult_num},
+			</if>
+			<if test="adult_price != null and adult_price != ''">
+				adult_price = #{adult_price},
+			</if>
+			<if test="adult_ids != null and adult_ids != ''">
+				adult_ids = #{adult_ids},
+			</if>
+			<if test="children_num != null and children_num != ''">
+				children_num = #{children_num},
+			</if>
+			<if test="children_price != null and children_price != ''">
+				children_price = #{children_price},
+			</if>
+			<if test="children_ids != null and children_ids != ''">
+				children_ids = #{children_ids},
+			</if>
+			<if test="departure_date != null and departure_date != ''">
+				departure_date = #{departure_date},
+			</if>
+			<if test="link_perple != null and link_perple != ''">
+				link_perple = #{link_perple},
+			</if>
+			<if test="link_phone != null and link_phone != ''">
+				link_phone = #{link_phone},
+			</if>
+			<if test="user_id != null and user_id != ''">
+				user_id = #{user_id},
+			</if>
+			<if test="order_state != null ">
+				order_state = #{order_state},
+			</if>
+			<if test="link_remark != null and link_remark != ''">
+				link_remark = #{link_remark},
+			</if>
+			<if test="order_sn != null and order_sn != ''">
+				order_sn = #{order_sn},
+			</if>
+			<if test="pay_status != null and pay_status != ''">
+				pay_status = #{pay_status},
+			</if>
+			<if test="pay_type != null and pay_type != ''">
+				pay_type = #{pay_type},
+			</if>
+			<if test="pay_price != null and pay_price != ''">
+				pay_price = #{pay_price},
+			</if>
+			<if test="sys_remark != null and sys_remark != ''">
+				sys_remark = #{sys_remark},
+			</if>
+			<if test="create_time != null and create_time != ''">
+				create_time = #{create_time},
+			</if>
+		</set>
+		where order_id = #{order_id}
+	</update>
+
+	<delete id="deleteOrder" parameterType="pd">
+		delete from
+		t_grouptour_order where 1=1 and order_id = #{order_id}
+	</delete>
+
+	<insert id="insertTraver" parameterType="java.util.List">
+		insert into
+		t_grouptour_order_traver(to_id,to_name,to_phone,to_idcard,to_type,to_refund_status,to_apply_num)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.to_id},#{item.to_name},#{item.to_phone},#{item.to_idcard},#{item.to_type},0,0)
+		</foreach>
+	</insert>
+	<update id="updateOrderTraver" parameterType="com.easaa.scenicspot.entity.ticket.Traveler">
+	   update t_grouptour_order_traver <set>
+	     <if test="refundStatus != null and refundStatus != ''">
+	       to_refund_status = #{refundStatus},
+	     </if>
+	   <if test="applyNum != null and applyNum != ''">
+	       to_apply_num = #{applyNum},
+	     </if>
+	   </set>
+	   where 1= 1
+	   <if test="id != null and id != ''">
+	     and  id = #{id}
+	   </if>
+	</update>
+	<delete id="deleteTraver" parameterType="page">
+		delete from
+		t_grouptour_order_traver
+		where 1=1
+		and id = #{pd.id}
+	</delete>
+
+
+
+	<!-- pc端旅游路线查询 -->
+	<select id="selectPcByPage" parameterType="pageExt" resultType="pd">
+		select
+		grouptour_id,grouptour_name,grouptour_price,grouptour_img,grouptour_tab,grouptour_phone,grouptour_sales,
+		grouptour_limited,grouptour_sketch,grouptour_character from
+		t_grouptour
+		where grouptour_state = 1
+		<if test="pd.order_type=='price_order'">
+			order by grouptour_price asc
+		</if>
+		<if test="pd.order_type=='sale_num'">
+			order by grouptour_sales desc
+		</if>
+		<if test="pd.order_type=='multiple'">
+			order by create_time desc
+		</if>
+	</select>
+	
+	<!-- 退款订单部分 -->
+	<insert id="insertRefundOrder" parameterType="pd">
+	   insert into t_grouptour_order_refund (order_id,order_travel_id,refund_no,refund_status,refund_type,refund_money,refund_reason,create_time,user_id)
+	   values(#{order_id},#{order_travel_id},#{refund_no},#{refund_status},#{refund_type},#{refund_money},#{refund_reason},#{create_time},#{user_id})
+	</insert>
+	<!-- 退款列表 -->
+	<select id="selectTravelRefundByPage" resultType="pd" parameterType="page">
+	   select c.to_name,c.to_phone,c.to_idcard,c.to_type,c.to_refund_status,c.to_apply_num,
+	   a.grouptour_name,a.grouptour_id,a.total_price,a.pay_price,a.else_price,a.adult_num,
+	   a.adult_price,a.children_num,a.children_price,a.departure_date,a.link_perple,a.link_phone,
+	   a.order_state,a.pay_status,a.pay_type,a.create_time,b.refund_no,b.refund_status,b.refund_type,
+	   b.refund_money,b.refund_reason,b.create_time as 'refund_create_time'
+	   from   t_grouptour_order_refund b left join t_grouptour_order a
+	   on a.order_id = b.order_id left join t_grouptour_order_traver c
+	   on b.order_travel_id = c.id 
+	   where b.user_id = #{pd.user_id}
+	</select>
+</mapper>

@@ -1,0 +1,35 @@
+.my-order nav ul li{
+	padding-left: 1rem;
+    padding-right: 1rem;
+}
+.container1{
+	overflow: hidden;
+}
+#appendText li{
+	background: #fff;
+	margin-bottom: 20px;
+}
+.time{
+	padding: .18rem .24rem;
+	border-bottom: 1px solid #e0e0e0;
+}
+.container1 .img-text-list{
+	margin-left: .24rem;
+}
+.container1 .img-text-list .img-box{
+	flex: 0 0 23%;
+}
+.all{
+	padding: .18rem .24rem;
+	border-top:1px solid #e0e0e0 ;
+	border-bottom: 1px solid #e0e0e0;
+}
+.btn{
+	padding: .18rem .24rem;
+	text-align: right;
+}
+.btn button{
+	border:1px solid #ff7d13;
+	color: #ff7d13;
+	border-radius: 4px;
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.JUDMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<select id="selectByMap" parameterType="page" resultType="pd">
+	   select * from t_byt_game where 1=1 and 2=2
+	   <if test="pd.size != null and pd.size != ''">
+	      and size = #{pd.size}
+	   </if>
+	   <if test="pd.id != null and pd.id != ''">
+	     and  id = #{pd.id}
+	   </if>
+	   order by size asc
+	</select>
+	<insert id="insert" parameterType="pd">
+	  insert into t_byt_game (size,img_url,gdesc) values (#{size},#{img_url},#{desc})
+	</insert>
+	<update id="update" parameterType="pd">
+	  update t_byt_game <set>
+		<if test="size != null and size != ''">
+		      size = #{size},
+		</if>
+	    <if test="img_url != null and img_url != ''">
+	      img_url = #{img_url},
+	    </if>
+	    <if test="desc != null and desc != ''">
+	      gdesc = #{desc},
+	    </if>
+	  </set>
+	  where id = #{id}
+	</update>
+	<delete id="delete" parameterType="page">
+	   delete from t_byt_game where id = #{pd.id}
+	</delete>
+	<!-- 查询新闻列表 -->
+	<select id="selectNewsList" parameterType="pd" resultType="pd">
+	   select *  from t_ythd_content where STATE = 1
+	   order by PUTTIME desc
+	</select>
+	<select id="selectNewsDetail" parameterType="pd" resultType="pd">
+	   select *  from t_ythd_content where STATE = 1 and CONTENT_ID = #{newsId}
+	   order by PUTTIME desc
+	</select>
+	
+	<insert id="insertContact" parameterType="pd"> 
+	  insert into t_contact (con_name,con_phone,con_mial,con_msg)
+	  values(#{con_name},#{con_phone},#{con_mial},#{con_msg})
+	</insert>
+	<select id="countryList" parameterType="pd" resultType="pd">
+	   select * from t_country order by country_name_en asc
+	</select>
+	<insert id="insertUserInfo" parameterType="pd">
+	   insert into t_user_info(first_name,last_name,email,university,address,city,state,zip,country,phone,fax,birthdate,sex,relationship,use_brand)
+	   values(#{first_name},#{last_name},#{email},#{university},#{address},#{city},#{state},#{zip},#{country},#{phone},#{fax},#{birthdate},#{sex},#{relationship},#{use_brand})
+	</insert>
+	<select id="condomListPage" parameterType="page" resultType="pd">
+	   select * from t_problem_list 
+	   where 1 = 1
+	   <if test="pd.id != null and pd.id != ''">
+	     and id = #{pd.id}
+	   </if>
+	   order by help_time desc
+	</select>
+	
+	<select id="condomListByMap" parameterType="pd" resultType="pd">
+		   select * from t_problem_list 
+		   where 1 = 1
+		   <if test="id != null and id != ''">
+		     and id = #{id}
+		   </if>
+		   order by help_time desc
+	</select>
+	<update id="updateCondom" parameterType="pd">
+	   update t_problem_list 
+	   <set>
+	     <if test="help_title != null and help_title != ''">
+	        help_title = #{help_title},
+	     </if>
+	         <if test="help_content != null and help_content != ''">
+	        help_content = #{help_content},
+	     </if>
+	   </set>
+	   where id = #{id}
+	</update>
+	<insert id="addCondom" parameterType="pd">
+	  insert into t_problem_list(help_title,help_content,help_time)
+	  values(#{help_title},#{help_content},#{help_time})
+	</insert>
+	<delete id="deleteCondom" parameterType="pd">
+	   delete from t_problem_list
+	   where id = #{id}
+	</delete>
+</mapper>

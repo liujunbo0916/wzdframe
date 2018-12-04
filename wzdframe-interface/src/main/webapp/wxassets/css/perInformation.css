@@ -1,0 +1,42 @@
+
+/*头像*/
+.img img{
+	width: 35px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+/*退出账号*/
+.con{
+	padding: 20px;
+	text-align: center;
+	color: #AA955E;
+}
+/*弹出层*/
+.popUp{
+	width: 100%;	
+	position: fixed;
+	bottom: 0;
+	z-index: 2;	
+}
+.position{	
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+	left: 50%;
+	transform: translate(-50%,0);
+	
+}
+.btn{	
+	background: #fff;
+	border-radius: 4px;
+	text-align: center;
+}
+/*button*/
+.btn button{
+	border: none;
+	width: 100%;
+	background: #FFFFFF;
+	color: #000;
+	padding: 15px 0;
+	border-radius: 4px;
+}

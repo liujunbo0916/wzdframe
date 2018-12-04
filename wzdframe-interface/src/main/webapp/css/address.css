@@ -1,0 +1,55 @@
+.address-box{
+	background: #fff;
+}
+.text-box{
+	padding: .3rem;
+	border-bottom: 1px solid #e0e0e0;
+}
+.inpt-box{
+	    padding: .3rem;
+}
+.check-box{
+	position: relative;
+}
+.check-box label{
+	margin-left: .54rem;
+}
+.check-box input{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.inpt-box .icon{
+	width: .48rem;
+	height: .48rem;
+	display: inline-block;
+	margin-right: 5px;
+	float: left;
+}
+.inpt-box .icon_shanc{
+	background: url(../img/shanchu@2x.png) no-repeat;
+	background-size: contain;
+}
+.inpt-box .icon_bianj{
+	background: url(../img/bianji@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon-box a{
+	display: inline-block;
+	margin-left: 5px;
+}
+.cart-js{
+	position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.2rem;
+    background: #fff;
+}
+.cart-js button{
+	width:100%;
+    background: #ab8a54;
+    height: 100%;
+    color: #fff;
+    display: inline-block;
+}

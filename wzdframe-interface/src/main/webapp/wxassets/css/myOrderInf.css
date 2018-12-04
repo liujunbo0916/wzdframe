@@ -1,0 +1,27 @@
+.wrap{	
+	position: relative;
+}
+/*border*/
+.borderd{
+	padding-bottom:8px ;
+	border-bottom: 1px dashed #D1D1D1;
+}
+
+.bgurl{
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	height:5px ;
+	display: block;
+	background: url(../img/letter_botom.png)0 0/100% 100%;
+}
+/*收货地址*/
+.txt{
+	margin-left: 10px;
+	flex: 1;
+}
+/*图片*/
+.img{
+	width: 90px;
+}

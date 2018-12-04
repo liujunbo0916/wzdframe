@@ -1,0 +1,41 @@
+/*商家已发货*/
+.shangj-wrap{
+	background: rgb(71,97,110);
+	color: #fff;
+}
+.con-boxs{
+	padding-left: .26rem;
+}
+button{
+	padding: .11rem .2rem;
+	color: #999;
+	border: 1px solid #999;
+	margin-right: 10px;
+	border-radius: 4px;
+}
+.shop-inform{
+	background: #fff;
+}
+.shop-inform ul li{
+	padding:.16rem .26rem;
+	border-bottom: 1px solid #e0e0e0;
+	overflow: hidden;
+}
+.shop-inform ul li p:first-child{
+	float: left;
+}
+.shop-inform ul li p:last-child{
+	float: right;
+}
+.fixed-btn{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	padding: .2rem .26rem;
+}
+.fixed-btn button:first-child{
+    color: #A89352;
+    border: 1px solid #A89352;
+}

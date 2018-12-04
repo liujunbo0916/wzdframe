@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.ScenicLineMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+	<select id="selectByMap" parameterType="page" resultType="pd">
+	  select * from t_scenic_line where 1= 1
+		  <if test="pd.id != null and pd.id != ''">
+		    and id = #{pd.id}
+		  </if>
+		  <if test="pd.line_name != null and pd.line_name != ''">
+		    and line_name = #{pd.line_name}
+		  </if>
+		  <if test="pd.line_status != null and pd.line_status != ''">
+		    and line_status = #{pd.line_status}
+		  </if>
+		  <if test="pd.line_logo != null and pd.line_logo != ''">
+		    and line_logo = #{pd.line_logo}
+		  </if>
+		  order by line_order desc
+		  <if test="pd.limit != null and pd.limit != ''">
+		      limit #{pd.limit}
+		  </if>
+	</select>
+	<select id="selectByPage" parameterType="pd" resultType="pd">
+	  select * from t_scenic_line where 1= 1
+		  <if test="pd.id != null and pd.id != ''">
+		    and id = #{pd.id}
+		  </if>
+		  <if test="pd.line_name != null and pd.line_name != ''">
+		    and line_name = #{pd.line_name}
+		  </if>
+		  <if test="pd.line_status != null and pd.line_status != ''">
+		    and line_status = #{pd.line_status}
+		  </if>
+		  <if test="pd.line_logo != null and pd.line_logo != ''">
+		    and line_logo = #{pd.line_logo}
+		  </if>
+		  order by line_order desc
+	</select>
+	<insert id="insert" parameterType="pd">
+	   insert into t_scenic_line(line_name,line_tip,line_lead,create_time,line_order,line_status,line_logo)
+	   values(#{line_name},#{line_tip},#{line_lead},#{create_time},#{line_order},#{line_status},#{line_logo})
+	   <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="line_id">
+			select LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	<update id="update" parameterType="pd">
+	   update t_scenic_line 
+	   <set>
+	     <if test="line_name != null and line_name != ''">
+	        line_name = #{line_name},
+	     </if>
+	      <if test="line_tip != null and line_tip != ''">
+	        line_tip = #{line_tip},
+	     </if>
+	     <if test="line_lead != null and line_lead != ''">
+	        line_lead = #{line_lead},
+	     </if>
+	     <if test="line_order != null and line_order != ''">
+	        line_order = #{line_order},
+	     </if>
+	     <if test="line_status != null and line_status != ''">
+	        line_status = #{line_status},
+	     </if>
+	     <if test="line_logo != null and line_logo != ''">
+	        line_logo = #{line_logo},
+	     </if>
+	   </set>
+	   where id = #{id}
+	</update>
+	
+	<!-- 删除攻略 -->
+	<delete id="delete" parameterType="page">
+	  delete from t_scenic_line where id = #{pd.id}
+	</delete>
+	<!-- 删除攻略 景点-->
+	<delete id="deleteScenic" parameterType="pd">
+	   delete from t_scenic_line_map where 1 = 0
+	   <if test="id != null and id != ''">
+	     or id = #{id}
+	   </if>
+	   <if test="line_id != null and line_id != ''">
+	     or line_id = #{line_id}
+	   </if>
+	   <if test="scenicAndLine != null and scenicAndLine != ''">
+	     or (line_id = #{ls_line_id} and line_scenic_id = #{ls_scenic_id})
+	   </if>
+	    <if test="line_scenic_id != null and line_scenic_id != ''">
+	     or line_scenic_id = #{line_scenic_id}
+	   </if>
+	</delete>
+	
+	
+	<!-- 查询攻略关联的景点 -->
+	<select id="selectScenicByLine" parameterType="pd" resultType="pd">
+	    select t2.*,t1.id as map_id,t1.line_id,t1.line_scenic_desc from   t_scenic_line_map t1 
+	    left join t_scenic_content t2 on t1.line_scenic_id = t2.id
+	    where t1.line_id = #{line_id}
+	    order by t1.line_scenic_desc desc
+	</select>
+	<!-- 根据攻略id和景点id查询 -->
+	<select id="selectScenicByLineScenic" parameterType="pd" resultType="pd">
+	    select * from t_scenic_line_map where 1= 1
+	    <if test="line_scenic_id != null and line_scenic_id != ''">
+	        and line_scenic_id = #{line_scenic_id}
+	    </if>
+	    <if test="line_id != null and line_id != ''">
+	        and line_id = #{line_id}
+	    </if>
+	</select>
+	<!-- 插入攻略关联景点表 -->
+	<insert id="insertScenicLine" parameterType="pd">
+	   insert into t_scenic_line_map(line_scenic_id,line_id,line_scenic_desc)
+	   values(#{line_scenic_id},#{line_id},#{line_scenic_desc})
+	</insert>
+	<!-- 评论点赞 -->
+	<select id="selectCommentByCondition" parameterType="pd" resultType="pd">
+	    select t1.content,t1.create_time,t2.nick_name,t2.headimgurl,t1.user_id   
+	    from t_scenic_line_comment t1 left join t_user t2 on t1.user_id = t2.user_id
+	    where show_status = 1
+	     <if test="line_id != null and line_id != ''">
+	       and t1.line_id = #{line_id}
+	    </if>
+	    order by create_time desc
+	    <if test="limit != null and limit != ''">
+	       limit #{limit}
+	    </if>
+	</select>
+	<insert id="insertComment" parameterType="pd">
+	   insert into t_scenic_line_comment(user_id,content,create_time,show_status,line_id)
+	   values(#{user_id},#{content},#{create_time},#{show_status},#{line_id})
+	</insert>
+	<!-- 查询评论点赞数量 -->
+	<!-- 统计某一路线评论数量 -->
+	<select id="countCommentByLine" parameterType="pd" resultType="Integer">
+	   select count(*) as countNum from t_scenic_line_comment where line_id = #{line_id} and show_status = 1
+	</select>
+	<!-- 统计某一路线点赞数量 -->
+	<select id="countPraiseByLine" parameterType="pd" resultType="Integer">
+	   select count(*) as countNum from t_scenic_line_praise where scenic_line_id = #{line_id}
+	</select>
+	<!-- 查询是否点赞 -->
+	<select id="selectPraiseByUser" parameterType="pd" resultType="pd">
+	    select * from t_scenic_line_praise where user_id = #{user_id} and scenic_line_id = #{line_id}
+	</select>
+	<!-- 点赞 -->
+	<insert id="praise" parameterType="pd">
+	  insert into t_scenic_line_praise(user_id,scenic_line_id) values(#{user_id},#{line_id})
+	</insert>
+	<!-- 分页查询pc端攻略列表 -->
+	<select id="selectByPcPage" parameterType="pageExt" resultType="pd">
+	  select * from t_scenic_line where line_status = 1
+	  order by line_order desc
+	</select>
+</mapper>

@@ -1,0 +1,69 @@
+/*头像人物介绍*/
+
+.content{
+	padding: 15px;
+	display: flex;
+	align-items: center;
+}
+.fx1{
+	flex: 1;
+}
+.text{
+	flex: 3;
+	margin-left: 10px;
+}
+
+/*积分 余额  优惠券*/
+.con{
+	display: flex;
+	text-align: center;
+	padding: 10px 0;
+}
+.flx{
+	flex: 1;
+	border-right: 1px solid #E8E8E8;
+	font-size: 18px;
+}
+/*定位*/
+.position{
+	position: relative;
+}
+.abso{
+	position: absolute;
+    padding: 2px;
+    top: -25px;
+    left: 68px;
+    background: #A89354;
+    border-radius: 2px;
+}
+.sanj{
+	width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #A89354 transparent transparent transparent;
+}
+/*客服热线弹出框*/
+.popUp{
+	width: 86%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+	text-align: center;
+}
+.hg{
+	height: 100px;
+	line-height: 100px;
+	border-bottom: 1px solid #EFEFEF;
+}
+.butt button{
+	color: #333;
+    width: 49%;
+    height: 50px;
+    display: initial;
+}

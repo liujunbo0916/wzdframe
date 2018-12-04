@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wzdframe-interface/wzdframe-interface.iml" filepath="$PROJECT_DIR$/wzdframe-interface/wzdframe-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wzdframe-root.iml" filepath="$PROJECT_DIR$/wzdframe-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wzdframe-scenicspot/wzdframe-scenicspot.iml" filepath="$PROJECT_DIR$/wzdframe-scenicspot/wzdframe-scenicspot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wzdframe-web/wzdframe-web.iml" filepath="$PROJECT_DIR$/wzdframe-web/wzdframe-web.iml" />
+    </modules>
+  </component>
+</project>

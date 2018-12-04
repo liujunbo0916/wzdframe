@@ -1,0 +1,18 @@
+.tuihuo-list li{
+	padding: .16rem .26rem;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+.tuihuo-list li p{
+	float: left;
+}
+.tuikuo-btn{
+	text-align: center;
+}
+.tuikuo-btn button{
+	color: #fff;
+	background: #A89352;
+	width: 70%;
+	padding: .2rem 1.12rem;
+	border-radius: 4px;
+}

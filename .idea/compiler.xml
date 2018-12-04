@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wzdframe-interface" />
+        <module name="wzdframe-scenicspot" />
+        <module name="wzdframe-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="wzdframe-interface" target="1.7" />
+      <module name="wzdframe-root" target="1.7" />
+      <module name="wzdframe-scenicspot" target="1.7" />
+      <module name="wzdframe-web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+body{
+	background: #f5f5f5;
+	font-size: .28rem;
+}
+.container{
+	margin-top: .1rem;
+	background: #fff;
+}
+.container ul li{
+	padding: .3rem .3rem .3rem 0 ;
+	margin-left: .3rem;
+	border-bottom:1px solid #e0e0e0 ;
+	overflow: hidden;
+	color: #333;
+}
+.container ul li p:last-child{
+	color: #666;
+}

@@ -1,0 +1,40 @@
+
+/*订单支付成功*/
+.content{
+	margin: 150px auto 50px;
+    width: 50%;
+    text-align: center;
+}
+.content img{
+	width: 80px;
+}
+h1{
+	font-size: 28px;
+}
+/*查看订单  再去逛逛*/
+.wrap{	
+	margin: 0 auto;
+    width: 90%;
+}
+/*button*/
+.butt{
+	display: inline-block;
+    padding: 15px 50px;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 25px;
+}
+.select{
+	background: #31364A;
+	color: #fff;
+}
+.normal{
+	border: 1px solid #E8E8E8;
+    background: #fff;
+    color: #000;
+}
+@media (max-device-width:320px) and (-webkit-min-device-pixel-ratio:2) {
+	.wrap{	
+		margin: 0 30px;
+	}
+}

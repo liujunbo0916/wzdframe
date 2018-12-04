@@ -1,0 +1,16 @@
+.container{
+	padding-left: .24rem;
+	padding-right: .24rem;
+	background: #fff;
+}
+.img-text-list{
+	display: flex;
+	padding-top: .18rem;
+	padding-bottom: .18rem;
+}
+.img-text-list .img-box{
+	flex: 0 0 36%;
+}
+.img-text-list .text-list{
+	margin-left: .26rem;
+}

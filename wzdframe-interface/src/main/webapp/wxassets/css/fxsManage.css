@@ -1,0 +1,76 @@
+/*导航*/
+.ul{
+	display: flex;
+}
+.ul li{
+	flex: 1;
+	padding: 15px 0;
+	position: relative;
+}
+.select{
+	border-bottom: 2px solid #A49053;
+}
+/*会员头像*/
+.ul1{
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	padding-top: 20px;
+}
+.ul1 li{
+	flex: 0 0 33.3333%;
+	padding-bottom:25px;	
+}
+.ul1 img{
+	width:70px;
+}
+/*佣金*/
+.ul2 li{
+	border-right: 1px dashed #fff;
+}
+	/*环形图*/
+.cavans{
+	display: block;
+	margin: 0 auto;
+}
+/*日期*/
+.inpt{
+	width: 100px;
+    height: 40px;		
+	opacity: 0;
+	position: absolute;
+	top: 15px;
+	left: 0;
+}
+/*矩形色块*/
+.block{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+}
+.b1{
+	background: #63B8BB;
+}
+.b2{
+	background: #5580AA;
+}
+.b3{
+	background: #C5A88A;
+}
+.member{
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+.mtxt{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+/*头像*/
+.img{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+}

@@ -1,0 +1,8 @@
+.book{
+	position: absolute;
+	width: 3.14rem;
+	height: .87rem;
+	bottom: .39rem;
+	left: 50%;
+	transform: translateX(-50%);
+}

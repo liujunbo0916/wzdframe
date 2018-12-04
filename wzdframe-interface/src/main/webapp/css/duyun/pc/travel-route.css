@@ -1,0 +1,176 @@
+.ticket-header {
+    height: 35px;
+    line-height: 35px;
+    width: 1140px;
+    margin: auto;
+    margin-bottom: 38px;
+    margin-top: 18px;
+}
+.sale-row {
+    width: 870px;
+    margin: auto!important;
+    margin-bottom: 34px!important;
+}
+.sale-row div{
+	cursor: pointer;
+}
+.comprehensive-sequence,.route-sale,.route-price{
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-right: 56px;
+    text-align: center;
+}
+.comprehensive-content {
+    width: 1140px;
+    margin: auto!important;
+}
+.comprehensive-sequence.active{
+    border:1px solid #fc9313;
+    color: #fff!important;
+    background-color: #fc9313;
+}
+.content-left {
+    min-width: 870px;
+    margin: 0 auto;
+    padding: 0;
+    margin-right: 30px;
+}
+.router-list {
+    border-bottom: thin solid #cdcdcd;
+    padding-top: 30px;
+}
+.router-list-item:hover{
+    border-bottom: 3px solid #fc9313;
+}
+.router-list-item.active{
+    border-bottom: 3px solid #fc9313;
+}
+.router-list-item {
+    max-width: 270px;
+    padding: 0;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #FFF;
+    cursor: pointer;
+}
+.router-list-item.last{
+    margin-right: 0;
+}
+.router-list-item img{
+    max-width: 270px;
+    height: 224px;
+}
+.image-hover {
+    height: 224px;
+    position: relative;
+}
+.list-hover{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    background: #fc9312;
+    opacity: 0.8;
+    color: #fff;
+    padding-left: 30px;
+    height: 60px;
+    padding-top: 6px;
+}
+.hover-header {
+    margin: 0;
+    font-size: 18px;
+}
+.hover-text {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 220px;
+}
+.list-content{
+    width: 270px;
+    height: 175px;
+    background: #fafafa;
+    padding: 30px;
+}
+.list-info-text{
+    font-size: 18px;
+    color: #333333;
+    margin-right: 10px;
+
+}
+.list-info-date{
+    font-size: 14px;
+    color: #fc9313;
+}
+.list-text-detail{
+    font-size: 12px;
+    color: #666666;
+}
+.list-info-amount{
+    font-size: 18px;
+    color: #ff3700;
+
+}
+.amount-text{
+    font-size: 12px;
+    color: #ff3700;
+}
+.list-info-count{
+    font-size: 12px;
+    color: #999999;
+    margin-left: 10px;
+}
+.hot-recommend{
+    margin-bottom: 51px;
+}
+.watch-list-detail{
+    width: 86px;
+    height: 30px;
+    line-height: 13px;
+    background: #fc9313;
+    font-size: 14px;
+    margin-left: 15px;
+
+}
+.content-right {
+    max-width: 240px;
+    padding: 0;
+}
+.hot-recommend-list {
+    border-bottom: thin solid #cdcdcd;
+    padding-bottom: 30px;
+    margin-bottom: 30px!important;
+    cursor: pointer;
+    padding-top: 30px;
+}
+.hot-recommend-image img{
+    width: 240px;
+    height: 112px;
+}
+.hot-recommend-content {
+    width: 240px;
+    background: #fafafa;
+    padding: 0 26px;
+}
+.content-one{
+    margin: 14px 0 18px 0;
+}
+.content-two{
+    margin-bottom: 30px!important;
+}
+.route-footer-content {
+    margin-top: 26px!important;
+}
+.footer-pagination{
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+}
+.body-footer{
+    height: 200px;
+    width:100%;
+    background: #444;
+}

@@ -1,0 +1,343 @@
+.login-container {
+    border-bottom: thin solid rgb(247,249,250);
+    height: 46px;
+    line-height: 35px;
+    font-size: 13px;
+    color: #444;
+    margin: auto;
+    background: rgb(247,249,250);
+}
+.login-text{
+    padding-right: 16px;
+}
+.login-line{
+    width: 1px;
+    height: 15px;
+    background: #cdcdcd;
+    position: relative;
+    top: 10px;
+    margin-right: 15px;
+}
+.nav-container {
+    height: 114px;
+    line-height: 114px;
+    font-size: 15px;
+    color: #444;
+    margin: auto;
+    border-bottom: 1px solid #ebebeb;
+}
+.nav-logo {
+	height:109px;
+	cursor: pointer;
+}
+.nav-logo img{
+	height:107px;
+}
+.col-md-2 {
+    padding: 0;
+    text-align: center;
+}
+
+.nav {
+    height: 114px;
+    line-height: 114px;
+}
+.nav-right > div{
+    padding: 0;
+}
+.nav-link {
+    display: block;
+    padding: 0;
+    color: #444;
+    margin-right: 36px;
+}
+.nav-link.active {
+    border-bottom: 3px solid rgb(243, 133, 15);
+    color: rgb(243, 133, 15);
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    top: 1px;
+}
+a:active,a:focus{
+    text-decoration: none !important;
+}
+.nav-link:active,.nav-link:focus{
+    color: rgb(243, 133, 15);
+    border-bottom: 3px solid rgb(243, 133, 15);
+    text-decoration: none !important;
+    outline: none;
+}
+.service-dropdown,.feature-dropdown{
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 6em !important;
+    border-radius: 0;
+}
+.service-item,.feature-item{
+    padding: 0 12px;
+    margin: 30px 0;
+    height: 35px;
+    line-height: 35px;
+}
+.nav-link:hover ,.btn-group:hover{
+    color: rgb(243, 133, 15);
+    cursor: pointer;
+}
+.service-nav {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: thin solid #cdcdcd;
+    width: inherit;
+    margin: auto;
+}
+
+.service-nav-right > div {
+    padding: 0;
+    font-size: 14px;
+}
+
+.service-nav-right .active, .service-color-text {
+    color: rgb(243, 133, 15);
+    font-size: 14px;
+}
+
+.service-text {
+    font-size: 14px;
+}
+.row{
+    margin: 0;
+}
+.body-container{
+    width: 1200px;
+    margin: auto;
+}
+.body-img {
+    width: 100%;
+    height: 574px;
+    position: relative;
+}
+.body-img img{
+    width: 100%;
+    height: 574px;
+}
+.img-hover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 32px;
+}
+.hover-one {
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 20px;
+}
+.hover-two {
+    color: #fff;
+    font-size: 18px;
+    padding-left: 14px;
+}
+.body-left {
+    max-width: 778px;
+    padding: 0;
+    margin-right: 90px;
+}
+.left-header-one{
+	overflow: hidden;
+}
+.left-header-one p{
+    font-size: 20px;
+    color: #333333;
+}
+.header-img{
+    width: 730px;
+    height: 400px;
+}
+.left-header-two p{
+    margin: 80px 0;
+    font-size: 20px;
+    color: #333333;
+}
+.left-header-three {
+    border-top: 1px solid #ebebeb;
+}
+.header-img-one{
+    width: 525px;
+    height: 400px;
+    margin-bottom: 30px;
+}
+.submit-comment{
+    margin-top: 48px;
+    margin-bottom: 12px;
+}
+textarea{
+    max-height: 166px;
+    outline: none;
+    padding: 16px;
+}
+.number{
+    position: absolute;
+    width: 100%;
+    margin-top: -30px;
+    text-align: right;
+}
+.button-group{
+    text-align: right;
+    width: 810px;
+}
+.submit-btn{
+    width: 128px;
+    height: 38px;
+    color: #fff;
+    background-color: #fc9313;
+    border:#fc9313;
+    line-height: 22px;
+    margin-top: 30px;
+}
+.left-header-four {
+    margin-top: 80px;
+}
+.friend-comment {
+    margin-bottom: 14px;
+}
+.comment-content {
+    height: 186px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+.comment-content >div{
+    padding: 0;
+}
+.comment-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 46px;
+    margin-top: 38px;
+}
+.comment-name{
+    color: #fc9313;
+    margin-bottom: 22px;
+    margin-top: 34px;
+    margin-left: 30px;
+    text-align: left;
+}
+.comment-text{
+    margin-bottom: 22px;
+    margin-left: 30px;
+    text-align: left;
+}
+.comment-date{
+    margin-bottom: 34px;
+    margin-left: 30px;
+    text-align: left;
+    color: #999999;
+}
+.comment-three{
+    font-size: 18px;
+    color: #fc9313;
+    vertical-align: bottom;
+    padding-top: 118px !important;
+}
+.comment-one{
+   text-align: center;
+}
+.body-right{
+    max-width: 332px;
+    padding: 0;
+}
+.relative-spot{
+    margin-top: 80px;
+    margin-bottom: 46px;
+}
+.hot-recommend-list {
+    padding-bottom: 30px;
+    margin-bottom: 48px;
+}
+.hot-recommend-image img{
+    width:332px;
+    height: 206px;
+
+}
+.hot-recommend-content {
+    width: 332px;
+    background: #fafafa;
+    padding-top: 24px;
+    padding-left: 8px;
+    border-bottom: 1px solid #ebebeb;
+}
+.recommend-one {
+    margin: 14px 0 18px 0;
+}
+.recommend-two{
+    margin-bottom: 20px;
+}
+.recommend-three {
+    margin-bottom: 30px;
+}
+.list-info-amount {
+    font-size: 18px;
+    color: #ff3700;
+}
+.amount-text {
+    font-size: 12px;
+    color: #ff3700;
+}
+.footer-pagination{
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 80px;
+}
+.prev,.next{
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    color: #949494;
+    text-decoration: none;
+    border: 1px solid #ebebeb;
+    background: #fafafa;
+    border-radius: 5px;
+    font-size: 13px;
+    height: 35px;
+    line-height: 17px;
+    margin:0 5px;
+}
+.prev:hover,.prev:active,.prev:focus,.next:hover,.next:active,.next:focus{
+    text-decoration: none;
+    color: #333;
+
+}
+.page{
+    position: relative;
+    float: left;
+    padding: .5rem .75rem;
+    height: 35px;
+    line-height: 17px;
+    color: #333;
+    text-decoration: none;
+    background-color: #fff;
+}
+.page:hover{
+    text-decoration: none;
+    color: #333;
+
+}
+.page.active{
+    outline: none;
+    background: #fc9313;
+    border-radius: 5px;
+    color: #fff!important;
+
+}
+.page:focus{
+    outline: none;
+    background: #fc9313;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.footer{
+    width: 100%;
+    height: 328px;
+}

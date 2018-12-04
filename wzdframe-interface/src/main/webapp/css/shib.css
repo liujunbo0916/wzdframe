@@ -1,0 +1,24 @@
+.imgs{
+	
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	color: #999;
+	
+}
+.imgs img{
+	    width: 105px;
+    height: 105px;
+}
+.imgs p{
+	    font-size: 18px;
+}
+.imgs button{
+	background: inherit;
+	border-color: #A89352;
+	color: #A89352;
+	border-radius: 20px;
+	margin-top: 20px;
+}

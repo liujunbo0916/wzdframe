@@ -1,0 +1,21 @@
+body{
+	background: #f6f5f3;
+	font-size: .16rem;
+	color: #666666;
+	line-height: 3.2em;
+}
+.container{
+	margin:.46rem .3rem;
+}
+.container h1{
+	font-size: .36rem;
+	margin-bottom: .44rem;
+	color: #ffb200;
+	text-align: center;
+}
+.text-box{
+	margin-top: .4rem;
+}
+.text-box p{
+	margin-bottom: .2rem;
+}

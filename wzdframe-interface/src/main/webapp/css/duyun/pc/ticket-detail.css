@@ -1,0 +1,378 @@
+.row {
+    margin: 0;
+}
+
+.first-col {
+    width: 550px;
+}
+
+.second-col {
+    width: 200px;
+}
+
+.third-col {
+    width: 150px;
+}
+
+.tail-col {
+    flex: 1;
+}
+
+
+.service-nav {
+    height: 50px;
+    line-height: 50px;
+    border-top: thin solid #cdcdcd;
+    border-bottom: thin solid #cdcdcd;
+    width: inherit;
+    margin: auto;
+}
+
+.service-nav-right > div {
+    padding: 0;
+    font-size: 14px;
+}
+
+.service-nav-right .active, .service-color-text {
+    color: rgb(243, 133, 15);
+    font-size: 14px;
+}
+
+.service-text {
+    font-size: 14px;
+}
+
+.ticket-header {
+        height: 35px;
+    line-height: 35px;
+    width: 1140px;
+    margin: auto;
+    margin-bottom: 38px;
+    margin-top: 18px;
+}
+.ticket-image-container {
+    margin-top: 20px;
+}
+
+
+
+.ticket-carousel-container {
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 450px;
+    margin-right: 20px;
+}
+.carousel-control{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    width: 15%;
+    font-size: 20px;
+    opacity: .5;
+}
+.ticket-indicators li {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 5px;
+    text-indent: -999px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.ticket-indicators{
+    bottom: 10px;
+}
+.ticket-indicators .active {
+    width: 8px;
+    height: 8px;
+}
+
+.ticket-carousel-img {
+    width: 100%;
+    height: 250px;
+}
+
+.img-address, .img-open-time, .service-promise {
+    margin-right: 0;
+    margin-left: -5px;
+}
+
+.img-header {
+    font-size: 26px;
+    line-height: 25px;
+    color: #333333;
+    margin-bottom: 32px;
+}
+
+.header-circle {
+    position: relative;
+    top: -4px;
+    font-size: 32px;
+}
+
+.img-level {
+    font-size: 14px;
+    color: #949494;
+    margin-bottom: 18px;
+}
+
+.img-amount {
+    background: rgb(247	,249,250);
+    line-height: 45px;
+    height: 45px;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+.price-symbol{
+    font-size: 18px;
+    color: #ff3700;
+}
+.price {
+    color:#ff3700;
+    font-size: 30px;
+}
+
+.price-text {
+    font-size: 14px;
+    color: #949494;
+    border-bottom: thin solid #cdcdcd;
+    margin: 0 10px;
+}
+
+.price-buy {
+    font-size: 14px;
+    color: #949494;
+    margin: 0 50px;
+}
+
+.img-address, .img-open-time, .service-promise {
+    margin: 10px 0;
+}
+
+.address, .open-time, .promise {
+    font-size: 14px;
+    color: #949494;
+    text-align: left;
+}
+
+.address-text, .open-text, .promise-text {
+    font-size: 15px;
+    color: #444;
+    text-align: left;
+    padding: 0;
+}
+.promise-item{
+    font-size: 14px;
+    color: #444;
+    display: inline-block;
+    height: 20px;
+    margin-right: 15px;
+    margin-bottom: 4px;
+}
+.promise-img{
+    position: relative;
+    top: -3px;
+    padding-right: 5px;
+}
+.service-content {
+    justify-content: center;
+}
+.service-content >div {
+    width: 1138px;
+}
+
+.service-detail-container {
+    justify-content: center;
+}
+
+.service-detail-middle{
+    border:1px solid rgb(243, 133, 15);
+    padding: 30px 38px;
+}
+.product-header{
+    color: #666;
+    background: rgb(247	,249,250);
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    width: 1060px;
+}
+
+.product-header .first-col {
+    padding-left: 15px;
+}
+
+.recommend{
+    color: #333;
+    font-size: 22px;
+    height: 60px;
+    padding-top: 20px;
+    border-bottom: thin solid #cdcdcd;
+    margin: 0;
+}
+.adult-ticket,.discount-ticket{
+    color: #333;
+    font-size: 22px;
+    height: 70px;
+    padding-top: 30px;
+    border-bottom: thin solid #cdcdcd;
+    margin: 0;
+}
+.recommend-detail,.adult-ticket-item,.discount-ticket-item{
+    height: 86px;
+    border-bottom: thin solid #cdcdcd;
+    margin: 0;
+}
+.detail-one{
+    font-size: 13px;
+    color: rgb(243, 133, 15);
+    text-align: left;
+    padding: 20px 0;
+}
+.detail-single{
+    padding: 30px 0;
+}
+.detail-two{
+    font-size: 13px;
+    line-height: 80px;
+}
+.detail-three{
+    font-size: 13px;
+    line-height: 80px;
+}
+.detail-four{
+    font-size: 13px;
+    line-height: 80px;
+}
+.old-price{
+    color: #999;
+    display: inline-block;
+    margin-left: 60px;
+}
+.outline-price{
+    width: 31px;
+    height: 1px;
+    background: #cdcdcd;
+    display: inline-block;
+    position: absolute;
+    top: 42px;
+    bottom: 0;
+    left: 35px;
+    z-index: 11;
+}
+.new-price{
+    color: #ff3700;
+}
+.online-booking{
+    color: #fff;
+    background-color: rgb(243, 133, 15);
+    border-color: rgb(243, 133, 15);
+    font-size: 13px;
+    width: 74px;
+    height: 30px;
+    line-height: 9px;
+    text-align: center;
+    margin-left: 16px;
+    outline: none;
+}
+.online-booking:hover,.online-booking:focus{
+    color: #fff;
+    background-color: rgb(243, 133, 15);
+    border-color: rgb(243, 133, 15);
+    outline: none;
+    box-shadow: none;
+}
+.footer-header{
+    height:60px;
+    line-height: 60px;
+    margin-top: 20px;
+    border-bottom: thin solid #cdcdcd;
+    font-size: 15px;
+    color: #4c4c4c;
+}
+.footer-header .active{
+    border-bottom: 2px solid rgb(243, 133, 15);
+    color: rgb(243, 133, 15);
+    position: relative;
+    top: 1px;
+}
+.introduction-header,.book-header{
+    height: 50px;
+    line-height: 50px;
+}
+.introduction-header-line{
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: rgb(243, 133, 15);
+    position: relative;
+    top: 4px;
+}
+.introduction-header-text{
+    font-size: 18px;
+}
+.introduction-text{
+    font-size: 15px;
+    padding-left: 20px;
+    margin:10px;
+    text-align: left;
+}
+.introduction-img,.introduction-big-img{
+    padding-left: 17px;
+
+}
+.img-item{
+    width: 350px;
+    height: 250px;
+    margin: 0 14px;
+}
+.introduction-big-img-item {
+    width: 800px;
+    height: 350px;
+    margin: 0 11px;
+}
+ul > *{
+    font-size: 15px;
+}
+.book-li{
+    color: rgb(243, 133, 15);
+}
+.li-header,li >p{
+    color: #444;
+}
+.policy {
+    padding-left: 10px;
+}
+.policy-text{
+    list-style: none;
+    color: #444;
+    margin: 15px 0;
+}
+.service-footer-container {
+    justify-content: center;
+}
+.service-footer-container > div {
+    width: 1138px;
+}
+.body-footer{
+    height: 200px;
+    width:100%;
+    background: #444;
+}
+.ticket-dialog{
+    width: 491px !important;
+    height: 400px !important;
+}
+.ticket-dialog .modal-body{
+    padding: 2px 0 0 0;
+}
+.footer{
+    width: 100%;
+    height: 328px;
+}

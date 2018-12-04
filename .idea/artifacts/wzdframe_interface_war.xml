@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="wzdframe-interface:war">
+    <output-path>$PROJECT_DIR$/wzdframe-interface/target</output-path>
+    <root id="archive" name="wzdframe-interface.war">
+      <element id="artifact" artifact-name="wzdframe-interface:war exploded" />
+    </root>
+  </artifact>
+</component>

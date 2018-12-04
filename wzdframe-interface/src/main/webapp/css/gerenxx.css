@@ -1,0 +1,47 @@
+body{
+	background: #f5f5f5;
+}
+.content-list{
+	background: #fff;
+	margin-top: .26rem;
+}
+.content-list li{
+	margin-left: .30rem;
+    height: 1.30rem;
+    line-height: .80rem;
+    padding: .27rem .30rem .27rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.icon-box span{
+	font-size: .28rem;
+	color: #333333;
+}
+.img-tx{
+	width: .80rem;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 5px;
+}
+.icon-right{
+	margin-top: .25rem;
+    float: left;
+    width: .32rem;
+    height: .32rem;
+    display: block;
+    background: url(../img/jiantou@2x.png) no-repeat;
+    background-size: contain;
+}
+.tuic-btn{
+	margin-top: .20rem;
+	padding: .27rem .30rem;
+	background: #fff;
+	text-align: center;
+}
+.tuic-btn button{
+	color: red;
+}
+.f999{
+	color: #999;
+	font-size: .28rem;
+}

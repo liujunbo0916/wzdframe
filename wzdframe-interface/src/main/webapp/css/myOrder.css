@@ -1,0 +1,35 @@
+body{
+	background: #f5f5f5;
+	font-size: .28rem;
+}
+.container{
+	margin-top: .10rem;
+}
+.container ul li{
+	background: #fff;
+	margin-bottom: .20rem;
+	padding: .30rem 0 .30rem .30rem;
+	border-bottom:1px solid #e0e0e0 ;
+}
+.top{
+	padding-bottom: .20rem;
+	border-bottom:1px solid #e0e0e0 ;
+	padding-right: .30rem;
+	color: #333;
+}
+.color{
+	color: rgb(253,184,16);
+}
+.bottom{
+	color: #666;
+}
+.bottom-box{
+	overflow: hidden;
+	padding-top: .24rem;
+}
+.bottom-box p{
+	float: left;
+}
+.bottom-box p:last-child{
+	margin-left: .20rem;
+}

@@ -1,0 +1,32 @@
+.box{
+	height:80px;
+	background: #3D404F;
+}
+.wrap{		
+	position: relative;
+}
+.con{
+	padding: 15px 10px;
+	background: #fff;
+	border-bottom: 1px solid #F4F4F4;
+}
+
+.marTop{
+	margin-top: 70px;
+}
+/*头像*/
+.img{
+	position: absolute;
+	top: -50%;
+	transform: translate(0,50%);
+}
+/*作品展示*/
+.ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.ul li{
+	flex: 0 0 44%;
+	margin: 15px 0 0 4%;
+	box-sizing: border-box;
+}

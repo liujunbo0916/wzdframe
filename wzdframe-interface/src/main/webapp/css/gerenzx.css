@@ -1,0 +1,86 @@
+body{
+	background: #f6f5f3;
+}
+/*title*/
+.title{
+	width: 100%;
+	height: .94rem;
+	line-height: .94rem;
+	background: #eeeeee;
+	border-bottom: 1px solid #e0e0e0;
+}
+.title span{
+	float: left;
+	width: .17rem;
+	margin-left: .30rem;
+	margin-top: .34rem;
+}
+.title p{
+	font-size: .34rem;
+	color: #333;
+	text-align: center;
+}
+/*input*/
+.inpt-box{
+	background: #fff;
+}
+.inpt-box ul{
+	margin-left: .30rem;
+}
+.inpt-box ul li{
+	border-bottom: 1px solid #e0e0e0;
+	font-size: .32rem;
+	height: 1.10rem;
+	line-height: 1.10rem;
+	overflow: hidden;
+}
+.inpt-box ul li label{
+	float: left;
+	width: 1.98rem;
+	display: inline-block;
+	color: #999999;
+}
+.inpt-box ul li input{
+	float: left;
+	height: 100%;
+	font-size: .32rem;
+}
+/*text-box*/
+.text-box{
+	background: #fff;
+	margin-top: .20rem;
+	padding:0 .30rem;
+}
+.text-box h2{
+	border-bottom: 1px solid #e0e0e0;
+	font-size: .32rem;
+	height: 1.10rem;
+	line-height: 1.10rem;
+}
+.text{
+	font-size: .28rem;
+	color: #666666;
+	padding: .43rem 0;
+}
+.text p{
+	position: relative;
+	margin-left: .24rem;
+	line-height: 1.5em;
+}
+.text p:before{
+	content: "*";
+	color: red;
+	position: absolute;
+	left: -.24rem;
+}
+.sumbit{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: .98rem;
+	line-height: .98rem;
+	background: #ffb200;
+	font-size: .38rem;
+	color: #ffffff;
+	text-align: center;
+}

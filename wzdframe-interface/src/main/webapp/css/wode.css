@@ -1,0 +1,132 @@
+/*头像*/
+.photo-bg{
+	width: 100%;
+    height: 4.2rem;
+    background: url(../img/7.png) no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    position: relative;
+}
+.toux{
+	text-align: center;
+    margin-top: .5rem;
+}
+.toux img{
+	margin: 0 auto;
+}
+.tx-text{
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}
+.tx-text ul{
+	display: flex;
+}
+.tx-text ul li {
+    flex: 1;
+    text-align: center;
+}
+/*我的订单*/
+.wo-wrap{
+	margin-bottom:0.2rem;
+	padding-top: 0.26rem;
+    padding-bottom: 0.26rem;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+.icon-list .flex-list{
+	/*margin-left: .3rem;*/
+}
+.icon-list .flex-list li{
+	/*padding-bottom: .2rem;*/
+}
+.flex-list{
+	display: flex;
+	flex-wrap: wrap;
+}
+.flex-list li{
+	flex: 0 0 25%;
+	margin-top: .19rem;
+	text-align: center;
+}
+.icon{
+	width: .56rem;
+	height: .56rem;
+	display: inline-block;
+}
+.icon_dfk{
+	background: url(../img/wode_daifukuan@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_dfh{
+	background: url(../img/wode_daifahuo@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_dpl{
+	background: url(../img/wode_daipingjia@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_thk{
+	background: url(../img/wode_tuihuanhuo@2x.png) no-repeat;
+	background-size: contain;
+}
+
+
+.icon_kc{
+	background: url(../img/wode_kecheng@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_kcb{
+	background: url(../img/kechengbiao@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_sc{
+	background: url(../img/wode_shoucang@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_qb{
+	background: url(../img/wode_qianbao@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_fx{
+	background: url(../img/wode_fenxiao@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_dp{
+	background: url(../img/wode_dianping@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_gz{
+	background: url(../img/wode_guanzhu@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_sz{
+	background: url(../img/wode_shehi@2x.png) no-repeat;
+	background-size: contain;
+}
+.icon_gy{
+	background: url(../img/wode_guanyu@2x.png) no-repeat;
+	background-size: contain;
+}
+.title .icon-right {
+    position: absolute;
+    right: .2rem;
+    top: 0;
+}
+.icon-right {
+    width: .32rem;
+    height: .32rem;
+    display: block;
+    background: url(../img/jiantou@2x.png) no-repeat;
+    background-size: contain;
+}
+.title {
+    padding-left: 0.26rem;
+    overflow: hidden;
+    padding-bottom: 0.3rem;
+    position: relative;
+}
+.border-bottom {
+    border-bottom: 1px solid #e0e0e0;
+}

@@ -1,0 +1,62 @@
+body{
+	background: #f7f7f7;
+}
+/*导航*/
+.nav{
+	width: 100%;
+	height: .92rem;
+	line-height: .92rem;
+	font-size: .28rem;
+	color: #999999;
+	background: #fff;
+}
+.nav ul{
+	display: flex;
+	text-align: center;
+	height: 100%;
+	border-bottom: 1px solid #e0e0e0;
+}
+.nav ul li{
+	flex: 1;
+	/*margin-top: .3rem;
+	margin-bottom: .24rem;*/
+	
+}
+.nav ul li.select{
+	color: #ffb200;
+	border-bottom: 5px solid #ffb200;
+}
+/*con*/
+.con{
+	overflow: hidden;
+}
+.con ul li{
+	padding: .16rem .30rem;
+	overflow: hidden;
+	margin-bottom: .24rem;
+	background: #fff;
+}
+.list-left{
+	width: 2.26rem;
+	height: 1.73rem;
+	float: left;
+	margin-right: .38rem;
+}
+.list-right{
+	float: left;
+}
+.list-right h2{
+	font-size: .34rem;
+	color: #545453;
+	margin-top: .06rem;
+}
+.list-right p{
+	font-size: .26rem;
+	color: #929292;
+	margin-top: .14rem;
+}
+.list-rights{
+	float: right;
+	width: .60rem;
+	margin-top: .50rem;
+}

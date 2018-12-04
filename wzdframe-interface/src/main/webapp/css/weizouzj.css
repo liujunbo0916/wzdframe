@@ -1,0 +1,50 @@
+body{
+	background: #f7f7f7;
+}
+/*con*/
+.con{
+	margin-top: .22rem;
+	overflow: hidden;
+	margin: 0 .30rem;
+}
+.con ul li{
+	overflow: hidden;
+	border-bottom: 1px solid #e0e0e0;
+}
+.time{
+	font-size: .26rem;
+	color: #929292;
+	margin: .21rem 0;
+}
+.list-box{
+	background: #fff;
+	padding: .16rem;
+}
+.list-left{
+	width: 2.26rem;
+	height: 1.73rem;
+	float: left;
+	margin-right: .38rem;
+	position: relative;
+}
+.go{
+	position: absolute;
+	color: #FFFFFF;
+	background: #ffb200;
+	top: 0;
+	font-size: .20rem;
+	padding: 2px;
+}
+.list-right{
+	float: left;
+}
+.list-right h2{
+	font-size: .34rem;
+	color: #545453;
+	margin-top: 6px;
+}
+.list-right p{
+	font-size: .26rem;
+	color: #929292;
+	margin-top: .14rem;
+}

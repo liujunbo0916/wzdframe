@@ -1,0 +1,37 @@
+/*订单支付成功*/
+.content{
+	margin: 200px auto 100px;
+	width: 50%;
+	text-align: center;
+}
+.content1{
+	margin: 100px auto 50px;
+	width: 50%;
+	text-align: center;
+}
+.content1 img{
+	width: 30%;
+	margin: 0 auto;
+}
+.content1 h1{
+	font-size: 18px;
+	margin-top: .4rem;
+}
+/*查看订单  再去逛逛*/
+.wrap1{
+	margin: 0 .4rem;
+    padding: .26rem .3rem;
+    background: #fff;
+    line-height: 2em;
+}
+/*button*/
+.btn{
+	width: 86%;
+	margin: .6rem auto;
+}
+.butt1{
+	width: 100%;
+	padding: .2rem;
+    background-color:#AB8A54 ;
+    color: #fff;
+}

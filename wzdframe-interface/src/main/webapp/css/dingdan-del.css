@@ -1,0 +1,28 @@
+body{
+	background: #f6f5f3;
+}
+/*input*/
+.inpt-box{
+	background: #fff;
+}
+.inpt-box ul{
+	margin-left: .3rem;
+}
+.inpt-box ul li{
+	border-bottom: 1px solid #e0e0e0;
+	font-size: .28rem;
+	height: .94rem;
+	line-height: .94rem;
+	overflow: hidden;
+}
+.inpt-box ul li label{
+	float: left;
+	width: 1.58rem;
+	display: inline-block;
+	color: #999999;
+}
+.inpt-box ul li input{
+	float: left;
+	height: 100%;
+	font-size: .32rem;
+}

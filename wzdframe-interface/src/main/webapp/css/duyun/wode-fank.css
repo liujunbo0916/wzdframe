@@ -1,0 +1,18 @@
+.textarea{
+	width: 90%;
+	margin: .26rem auto;
+	position: relative;
+}
+.textarea textarea{
+	width: 100%;
+	background-color: inherit;
+	border: 1px solid #e0e0e0;
+	padding: .26rem;
+	resize:none;
+}
+.abs{
+	position: absolute;
+	bottom: .26rem;
+	right: .26rem;
+	color:  #7E8186;
+}

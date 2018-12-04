@@ -1,0 +1,59 @@
+body{
+	background: #f7f7f7;
+}
+/*con*/
+.con{
+	margin-top: .22rem;
+	background: #fff;
+	overflow: hidden;
+}
+.con ul li{
+	margin-left: .30rem;
+    padding: .16rem .30rem .16rem 0;
+	overflow: hidden;
+	border-bottom: 1px solid #e0e0e0;
+}
+.list-left{
+	width: 1.66rem;
+    height: 1.40rem;
+	float: left;
+	margin-right: .16rem;
+}
+.list-right{
+	float: right;
+	width: 5.04rem;
+	position: relative;
+}
+.list-right h2{
+	font-size: .28rem;
+	color: #333;
+}
+.list-right p{
+	font-size: .26rem;
+	color: #929292;
+	margin-top: .55rem;
+}
+.chul{
+	position: absolute;
+	font-size: .24rem;
+	color: #ffb200;
+	bottom: 0;
+	right: 0;
+}
+.report{
+	width: 100%;
+	padding: .28rem;
+	font-size: .26rem;
+	color: #666666;
+	background: #f5f5f5;
+	position: relative;
+	margin-top: .30rem;
+}
+.report:before{
+	content: "";
+    position: absolute;
+    top: -.30rem;
+    left: .22rem;
+    border: .15rem solid transparent;
+    border-bottom-color: #f5f5f5;
+}

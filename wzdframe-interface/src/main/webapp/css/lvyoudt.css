@@ -1,0 +1,47 @@
+/*con*/
+.con{
+	margin-top: .22rem;
+	background: #fff;
+	overflow: hidden;
+}
+.con ul li{
+	padding: .16rem .30rem;
+    overflow: hidden;
+    border-bottom: 1px solid #e0e0e0;
+}
+.list-left{
+	float: left;
+	width: 4.24rem;
+}
+.list-left h2{
+	font-size: .30rem;
+	color: #454553;
+}
+.left-box{
+	margin-top: .33rem;
+}
+.icon{
+	float: left;
+	margin-right: .38rem;
+}
+.icon img{
+	float: left;
+	margin-right: .18rem;
+	}
+.icon1 img{
+	width: .26rem;
+}
+.icon2 img{
+	width: .28rem;
+}
+.icon span{
+	font-size: .22rem;
+	color: #666666;
+	float:left ;
+}
+.list-right{
+	width: 2.34rem;
+    height: 1.40rem;
+    float: right;
+    overflow: hidden;
+}

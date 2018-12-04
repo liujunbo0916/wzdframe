@@ -1,0 +1,248 @@
+.orders{
+	background: #fff;
+	padding: 5px 0;
+	border-top: 1px solid #EFEFEF;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+.order{
+	width: 90%;
+	display: block;	
+	padding: 10px 0;
+	text-align: center;
+	margin: 0 auto;
+	background: #31364A;
+	color: #fff;
+}
+/*图标的规格*/
+.icon{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.ico{
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.iconn{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.iccn{
+	width: 10px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.ic{
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	vertical-align: middle;
+}   /*勾选与不勾选 下拉与收起*/
+.icc{
+	width: 10px;
+	height: 6px;
+	display: inline-block;
+	vertical-align: middle;
+} /*三角形*/
+
+				/******* 不勾选 勾选*******/	
+.i1{
+	background: url(../img/cart_icon_unselect.png) 0 0/100% 100%;
+} /*不勾选*/
+.i2{
+	background: url(../img/cart_select_icon.png) 0 0/100% 100%;	
+} /*勾选*/
+				/*******下拉 收起*******/
+.i3{
+	background: url(../img/shouqi_icon.png)0 0/100% 100%;
+} /*下拉*/
+.i4{
+	background: url(../img/xiala_icon.png)0 0/100% 100%;
+} /*收起*/
+
+/*时间*/
+.i5{
+	background: url(../img/time_icon.png)0 0/100% 100%;
+}
+/*灰色地址*/
+.i6{
+	background: url(../img/address_icon.png)0 0/100% 100%;
+}
+/*专注心形*/
+.i7{
+	background: url(../img/concern.png) 0 0/100% 100%;
+}
+/*分享*/
+.i8{
+	background: url(../img/share_icon.png)0 0/100% 100%;
+}
+/*向右箭头*/
+.i9{
+	background: url(../img/tiaozhuan_icon.png)0 0/100% 100%;
+}
+/*加号*/
+.i10{
+	background: url(../img/add_icon_normal.png) 0 0/100% 100%;
+}
+/*减号*/
+.i11{
+	background: url(../img/jian_icon_normal.png) 0 0/100% 100%;
+}
+/*收藏心形*/
+.i12{
+	background: url(../img/like_normal.png) 0 0/100% 100%;
+}
+/*叶子形状*/
+.i13{
+	background: url(../img/zuopin_icon.png)0 0/100% 100%;
+}
+/*加号*/
+.i14{
+	background: url(../img/add_icon_normal.png) 0 0/100% 100%;
+}
+/*减号*/
+.i15{
+	background: url(../img/jian_icon_normal.png) 0 0/100% 100%;
+}
+/*删除按钮*/
+.i16{
+	background: url(../img/delet_icon.png) 0 0/100% 100%;
+}
+/*收货地址*/
+.i17{
+	background: url(../img/none_address_icon.png) 0 0/100% 100%;
+}
+/*支付宝*/
+.i18{
+	background: url(../img/alipay_icon_normal.png)0 0/100% 100%;
+}
+.i19{
+	background: url(../img/alipay_icon_pressed.png)0 0/100% 100%;
+}
+/*微信*/
+.i20{
+	background: url(../img/wechat_icon_normal.png)0 0/100% 100%;
+}
+.i21{
+	background: url(../img/wechat_icon_pressed.png)0 0/100% 100%;
+}
+/*银联*/
+.i22{
+	background: url(../img/bankcard_icon_normal.png)0 0/100% 100%;
+}
+.i23{
+	background: url(../img/bankcard_icon_pressed.png)0 0/100% 100%;
+}
+/*个人中心向右的箭头*/
+.i24{
+	background: url(../img/arrow.png)0 0/100% 100%;
+}
+/*我的订单*/
+.i25{
+	background: url(../img/me_myordericon.png)0 0/100% 100%;
+}
+/*我的预约*/
+.i26{
+	background: url(../img/calendar_icon.png)0 0/100% 100%;
+}
+/*我的关注*/
+.i27{
+	background: url(../img/like.png)0 0/100% 100%;
+}
+/*支付密码*/
+.i28{
+	background: url(../img/me_passwordicon.png)0 0/100% 100%;
+}
+/*地址管理*/
+.i29{
+	background: url(../img/me_addressicon.png)0 0/100% 100%;
+}
+/*分销商管理*/
+.i30{
+	background: url(../img/friends.png)0 0/100% 100%;
+}
+/*关于我们*/
+.i31{
+	background: url(../img/me_abouticon.png)0 0/100% 100%;
+}
+/*客服热线*/
+.i32{
+	background: url(../img/me_telephoneicon.png)0 0/100% 100%;
+}
+/*叉叉*/
+.i33{
+	background: url(../img/delete_icon.png) 0 0/100% 100%;
+}
+/*眼睛*/
+.i34{
+	background: url(../img/eye_hide.png)0 0/100% 100%;
+}
+/*提示*/
+.i35{
+	background: url(../img/tishi_icon.png)0 0/100% 100%;
+}
+/*三角形*/
+.i36{
+	background: url(../img/sanjiao.png)0 0/100% 100%;
+}
+/*不同意与同意*/
+.i37{
+	background: url(../img/register_icon_normal.png)0 0/100% 100%;
+}
+.i38{
+	background: url(../img/register_icon_selected.png)0 0/100% 100%;
+}
+/*蓝色圆形*/
+.i39{
+	background: #63B8BB;
+	border-radius: 50%;
+}
+.i40{
+	background: #5580AA;
+	border-radius: 50%;
+}
+.i41{
+	background: #C5A88A;
+	border-radius: 50%;
+}
+/*向下按钮*/
+.i42{
+	background: url(../img/down_icon.png) 0 0/100% 100%;
+}
+/*向上按钮*/
+.i43{
+	background: url(../img/up_icon.png) 0 0/100% 100%;
+}
+/*叉叉*/
+.i44{
+	background: url(../img/cancel_icon.png)0 0/100% 100%;
+}
+/*管理收货地址人物头像*/
+.i45{
+	/*默认状态*/
+	background: url(../img/man_icon.png)0 0/100% 100%;
+}
+.i46{
+	/*普通状态*/
+	background: url(../img/man_icon_undefalut.png)0 0/100% 100%;
+}
+/*电话*/
+.i47{
+	background: url(../img/little_phone_icon.png)0 0/100% 100%;
+}
+/*地址*/
+.i48{
+	background: url(../img/little_address_icon.png)0 0/100% 100%;
+}
+/*点击心形*/
+.i50{
+	background: url(../img/like_pressed.png)0 0/100% 100%;
+}

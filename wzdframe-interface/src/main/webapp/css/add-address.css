@@ -1,0 +1,27 @@
+.wrap-box{
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+.content{
+	width: 94%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.inpt{
+	width: 100%;
+	margin-top:20px;
+	padding-bottom:10px ;
+	border-bottom: 1px solid #F2F2F2;
+}
+.inpt label{
+	color: #ACACAC;
+    width: 22%;
+    display: inline-block;
+}
+.inpt input{
+	background: none;
+	color: #000;
+	font-size: 14px;
+	text-indent: 10px;
+	outline: none;
+}

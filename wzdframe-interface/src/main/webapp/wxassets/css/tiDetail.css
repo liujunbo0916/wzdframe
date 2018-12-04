@@ -1,0 +1,21 @@
+
+h3{
+	font-size: 20px;
+	color: #000;
+	margin-left: 10px;
+}
+.content{
+	padding: 10px 20px;	
+}
+.con{
+	height: 80px;
+	overflow: hidden;
+}
+.content p{
+	margin-top: 5px;
+}
+.more{
+	margin: 15px auto 0;
+	text-align: center;
+	display: block;	
+}

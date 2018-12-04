@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.content{width: 1200px;
+    margin: 24px auto 430px;
+    overflow: hidden;
+    padding-bottom: 23px;}
+.cTitle{width:100%; height:56px; line-height:56px; font-size:24px; border-bottom:1px solid #F3F3F3;}
+.cTitle span:nth-child(1){float: left;	border-bottom: 2px solid #009ff0;}
+.cContent{margin-top:26px;}
+.cCon p{font-size:18px; line-height:2.5em;  }	
+.cContent .cimg{width:616px; height:413px; margin:20px auto;}
+.cContent ul{}
+.cContent ul li{float:left; width:280px; height:305px;  margin-right:25px; margin-bottom:26px;} 
+.cContent ul li img{width:100%; height:170px;}  
+.cfix{border:1px solid #E2E9EF; border-top:none; height:120px; }
+.cfix p{ width:96%; margin:0 auto;font-size:14px; color:#999999; padding:10px 0; line-height:1.5em;}

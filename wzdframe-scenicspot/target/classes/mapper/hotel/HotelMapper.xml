@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easaa.scenicspot.dao.HotelMapper">
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache" />
+
+	<!-- 酒店信息 -->
+	<sql id="hotelcondition">
+		<if test="pd.hotel_id != null">
+			and hotel_id = #{pd.hotel_id}
+		</if>
+		<if test="pd.hotel_name != null and pd.hotel_name != ''">
+			and hotel_name like CONCAT(CONCAT('%',
+			#{pd.hotel_name}),'%')
+		</if>
+		<if test="pd.hotel_desc != null and pd.hotel_desc != ''">
+			and hotel_desc = #{pd.hotel_desc}
+		</if>
+		<if test="pd.hotel_sketch != null and pd.hotel_sketch != ''">
+			and hotel_sketch = #{pd.hotel_sketch}
+		</if>
+		<if test="pd.hotel_price != null and pd.hotel_price != ''">
+			and hotel_price = #{pd.hotel_price}
+		</if>
+		<if test="pd.hotel_img != null and pd.hotel_img != ''">
+			and hotel_img = #{pd.hotel_img}
+		</if>
+		<if test="pd.hotel_type_id != null and pd.hotel_type_id != ''">
+			and hotel_type_id = #{pd.hotel_type_id}
+		</if>
+		<if test="pd.hotel_province_id != null and pd.hotel_province_id != ''">
+			and hotel_province_id = #{pd.hotel_province_id}
+		</if>
+		<if test="pd.hotel_province_name != null and pd.hotel_province_name != ''">
+			and hotel_province_name = #{pd.hotel_province_name}
+		</if>
+		<if test="pd.hotel_city_id != null and pd.hotel_city_id != ''">
+			and hotel_city_id = #{pd.hotel_city_id}
+		</if>
+		<if test="pd.hotel_city_name != null and pd.hotel_city_name != ''">
+			and hotel_city_name = #{pd.hotel_city_name}
+		</if>
+		<if test="pd.hotel_area_id != null and pd.hotel_area_id != ''">
+			and hotel_area_id = #{pd.hotel_area_id}
+		</if>
+		<if test="pd.hotel_area_name != null and pd.hotel_area_name != ''">
+			and hotel_area_name = #{pd.hotel_area_name}
+		</if>
+		<if test="pd.hotel_address != null and pd.hotel_address != ''">
+			and hotel_address = #{pd.hotel_address}
+		</if>
+		<if test="pd.hotel_phone != null and pd.hotel_phone != ''">
+			and hotel_phone = #{pd.hotel_phone}
+		</if>
+		<if test="pd.hotel_starlevel != null and pd.hotel_starlevel != ''">
+			and hotel_starlevel = #{pd.hotel_starlevel}
+		</if>
+		<if test="pd.hotel_stars != null and pd.hotel_stars != ''">
+			and hotel_stars = #{pd.hotel_stars}
+		</if>
+		<if test="pd.hotel_tags != null and pd.hotel_tags != ''">
+			and hotel_tags = #{pd.hotel_tags}
+		</if>
+		<if test="pd.hotel_popularity != null and pd.hotel_popularity != ''">
+			and hotel_popularity = #{pd.hotel_popularity}
+		</if>
+		<if test="pd.hotel_lat != null and pd.hotel_lat != ''">
+			and hotel_lat = #{pd.hotel_lat}
+		</if>
+		<if test="pd.hotel_lng != null and pd.hotel_lng != ''">
+			and hotel_lng = #{pd.hotel_lng}
+		</if>
+		<if test="pd.hotel_url_type != null and pd.hotel_url_type != ''">
+			and hotel_url_type = #{pd.hotel_url_type}
+		</if>
+		<if test="pd.hotel_url != null and pd.hotel_url != ''">
+			and hotel_url = #{pd.hotel_url}
+		</if>
+		<if test="pd.hotel_hot != null and pd.hotel_hot != ''">
+			and hotel_hot = #{pd.hotel_hot}
+		</if>
+		<if test="pd.hotel_recommend != null and pd.hotel_recommend != ''">
+			and hotel_recommend = #{pd.hotel_recommend}
+		</if>
+		<if test="pd.hotel_state != null and pd.hotel_state != ''">
+			and hotel_state = #{pd.hotel_state}
+		</if>
+		<if test="pd.create_time != null and pd.create_time != ''">
+			and create_time = #{pd.create_time}
+		</if>
+	</sql>
+
+	<select id="selectByMap" resultType="pd" parameterType="page">
+		select * from t_hotel where 1 = 1
+		<include refid="hotelcondition"></include>
+	</select>
+
+	<select id="selectByListPage" resultType="pd" parameterType="page">
+		SELECT
+		t_hotel.*, t_hotel_type.hotel_type_name,
+		(round(6367000 * 2 * asin(sqrt(pow(sin(((hotel_lat * pi()) / 180 - (#{pd.currentLat} * pi()) / 180) / 2), 2) + cos((#{pd.currentLat} * pi()) / 180) * cos((hotel_lat * pi()) / 180) * pow(sin(((hotel_lng * pi()) / 180 - (#{pd.currentLng} * pi()) / 180) / 2), 2))))) AS distance 
+		FROM
+		t_hotel
+		LEFT JOIN t_hotel_type ON t_hotel.hotel_type_id =
+		t_hotel_type.hotel_type_id
+		WHERE
+		1 = 1
+		<include refid="hotelcondition"></include>
+		ORDER BY
+		<if test="pd.orderType != null and pd.orderType != '' and pd.orderType == 'popularity'">
+			hotel_popularity DESC,
+		</if>
+		<if test="pd.orderType != null and pd.orderType != '' and pd.orderType == 'distance'">
+		    distance ASC,
+		</if>
+		<if test="pd.orderType != null and pd.orderType != '' and pd.orderType == 'price'">
+			hotel_price ASC,
+		</if>
+		 create_time DESC
+	</select>
+
+	<select id="selectByPage" resultType="pd" parameterType="page">
+		select * from t_hotel where 1 = 1
+		<include refid="hotelcondition"></include>
+	</select>
+
+	<select id="selectById" resultType="pd" parameterType="Integer">
+		select * from t_hotel where 1 = 1 and hotel_id =#{hotel_id}
+	</select>
+
+	<insert id="insert" parameterType="pd">
+		insert into t_hotel
+		(hotel_name,hotel_desc,hotel_sketch,hotel_price,hotel_img,hotel_type_id,hotel_province_id,hotel_province_name,hotel_city_id,hotel_city_name,
+		hotel_area_id,hotel_area_name,hotel_address,hotel_phone,hotel_starlevel,hotel_stars,hotel_tags,hotel_popularity,hotel_lat,hotel_lng,hotel_url_type,hotel_url,hotel_hot,
+		hotel_recommend,hotel_state,create_time)
+		values(#{hotel_name},#{hotel_desc},#{hotel_sketch},#{hotel_price},#{hotel_img},#{hotel_type_id},#{hotel_province_id},#{hotel_province_name},#{hotel_city_id},#{hotel_city_name},
+		#{hotel_area_id},#{hotel_area_name},#{hotel_address},#{hotel_phone},#{hotel_starlevel},#{hotel_stars},#{hotel_tags},#{hotel_popularity},#{hotel_lat},#{hotel_lng},#{hotel_url_type},#{hotel_url},#{hotel_hot},
+		#{hotel_recommend},#{hotel_state},#{create_time})
+	</insert>
+
+	<update id="update" parameterType="pd">
+		update t_hotel
+		<set>
+			<if test="hotel_name != null and hotel_name != ''">
+				hotel_name = #{hotel_name},
+			</if>
+			<if test="hotel_desc != null">
+				hotel_desc = #{hotel_desc},
+			</if>
+			<if test="hotel_sketch != null">
+				hotel_sketch = #{hotel_sketch},
+			</if>
+			<if test="hotel_price != null and hotel_price != ''">
+				hotel_price = #{hotel_price},
+			</if>
+			<if test="hotel_img != null and hotel_img != ''">
+				hotel_img = #{hotel_img},
+			</if>
+			<if test="hotel_type_id != null and hotel_type_id != ''">
+				hotel_type_id = #{hotel_type_id},
+			</if>
+			<if test="hotel_province_id != null and hotel_province_id != ''">
+				hotel_province_id = #{hotel_province_id},
+			</if>
+			<if test="hotel_province_name != null and hotel_province_name != ''">
+				hotel_province_name = #{hotel_province_name},
+			</if>
+			<if test="hotel_city_id != null and hotel_city_id != ''">
+				hotel_city_id = #{hotel_city_id},
+			</if>
+			<if test="hotel_city_name != null and hotel_city_name != ''">
+				hotel_city_name = #{hotel_city_name},
+			</if>
+			<if test="hotel_area_id != null and hotel_area_id != ''">
+				hotel_area_id = #{hotel_area_id},
+			</if>
+			<if test="hotel_area_name != null and hotel_area_name != ''">
+				hotel_area_name = #{hotel_area_name},
+			</if>
+			<if test="hotel_address != null and hotel_address != ''">
+				hotel_address = #{hotel_address},
+			</if>
+			<if test="hotel_phone != null and hotel_phone != ''">
+				hotel_phone = #{hotel_phone},
+			</if>
+			<if test="hotel_starlevel != null and hotel_starlevel != ''">
+				hotel_starlevel = #{hotel_starlevel},
+			</if>
+			<if test="hotel_stars != null and hotel_stars != ''">
+				hotel_stars = #{hotel_stars},
+			</if>
+			<if test="hotel_tags != null and hotel_tags != ''">
+				hotel_tags = #{hotel_tags},
+			</if>
+			<if test="hotel_popularity != null and hotel_popularity != ''">
+				hotel_popularity = #{hotel_popularity},
+			</if>
+			<if test="hotel_lat != null and hotel_lat != ''">
+				hotel_lat = #{hotel_lat},
+			</if>
+			<if test="hotel_lng != null and hotel_lng != ''">
+				hotel_lng = #{hotel_lng},
+			</if>
+			<if test="hotel_url_type != null and hotel_url_type != ''">
+				hotel_url_type = #{hotel_url_type},
+			</if>
+			<if test="hotel_url != null and hotel_url != ''">
+				hotel_url = #{hotel_url},
+			</if>
+			<if test="hotel_hot != null and hotel_hot != ''">
+				hotel_hot = #{hotel_hot},
+			</if>
+			<if test="hotel_recommend != null and hotel_recommend != ''">
+				hotel_recommend = #{hotel_recommend},
+			</if>
+			<if test="hotel_state != null and hotel_state != ''">
+				hotel_state = #{hotel_state},
+			</if>
+			<if test="create_time != null and create_time != ''">
+				create_time = #{create_time},
+			</if>
+		</set>
+		where hotel_id = #{hotel_id}
+	</update>
+
+	<delete id="delete" parameterType="pd">
+		delete from t_hotel where 1=1 and hotel_id = #{hotel_id}
+	</delete>
+
+
+	<!-- 酒店类型信息 -->
+	<sql id="hoteltypecondition">
+		<if test="pd.hotel_type_id != null">
+			and hotel_type_id = #{pd.hotel_type_id}
+		</if>
+		<if test="pd.hotel_type_name != null and pd.hotel_type_name != ''">
+			and hotel_type_name = #{pd.hotel_type_name}
+		</if>
+		<if test="pd.hotel_type_sort != null and pd.hotel_type_sort != ''">
+			and hotel_type_sort = #{pd.hotel_type_sort}
+		</if>
+		<if test="pd.create_time != null and pd.create_time != ''">
+			and create_time = #{pd.create_time}
+		</if>
+	</sql>
+
+	<select id="selectHotelTypeByMap" resultType="pd" parameterType="page">
+		select * from t_hotel_type where 1 = 1
+	</select>
+
+	<select id="selectHotelTypeByPage" resultType="pd"
+		parameterType="page">
+		select * from t_hotel_type where 1 = 1
+		<include refid="hoteltypecondition"></include>
+	</select>
+
+	<select id="selectHotelTypeById" resultType="pd" parameterType="Integer">
+		select * from t_hotel_type where 1 = 1 and hotel_type_id
+		=#{hotel_type_id}
+	</select>
+
+	<insert id="insertHotelType" parameterType="pd">
+		insert into t_hotel_type (hotel_type_name,hotel_type_sort,create_time)
+		values(#{hotel_type_name},#{hotel_type_sort},#{create_time})
+	</insert>
+
+	<update id="updateHotelType" parameterType="pd">
+		update t_hotel_type
+		<set>
+			<if test="hotel_type_name != null and hotel_type_name != ''">
+				hotel_type_name = #{hotel_type_name},
+			</if>
+			<if test="hotel_type_sort != null and hotel_type_sort != ''">
+				hotel_type_sort = #{hotel_type_sort},
+			</if>
+			<if test="create_time != null and create_time != ''">
+				create_time = #{create_time},
+			</if>
+		</set>
+		where hotel_type_id = #{hotel_type_id}
+	</update>
+
+	<delete id="deleteHotelType" parameterType="pd">
+		delete from t_hotel_type where 1=1 and hotel_type_id = #{hotel_type_id}
+	</delete>
+</mapper>

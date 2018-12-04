@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JUD-mis:war">
+    <output-path>$PROJECT_DIR$/JUD-mis/target</output-path>
+    <root id="archive" name="JUD-mis.war">
+      <element id="artifact" artifact-name="JUD-mis:war exploded" />
+    </root>
+  </artifact>
+</component>

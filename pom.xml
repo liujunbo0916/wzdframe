@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ythd.mis</groupId>
+  <artifactId>wzdframe-root</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>wzdframe-root</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <modules>
+  	<module>wzdframe-scenicspot</module>
+  	<module>wzdframe-web</module>
+  	<module>wzdframe-interface</module>
+  </modules>
+<!--   <repositories>
+		<repository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://192.168.0.10:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories> -->
+	<!-- 指定私有服务器仓库的地址结束 -->
+	<!-- 指定仓库插件 -->
+<!-- 	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://192.168.0.10:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories> -->
+	<!-- 指定仓库插件结束 -->
+	<!-- 将项目 发布 到私有服务器 -->
+	<dependencies>
+	<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+</project>

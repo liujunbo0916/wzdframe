@@ -1,0 +1,125 @@
+.cart-wrap{
+	margin-top: .2rem;
+	padding: .3rem 0 0 .36rem;
+	background: #fff;
+	border-bottom: 1px solid #e0e0e0;
+}
+/*checkbox*/
+.check-box{
+	position: relative;
+}
+.check-box input[type="checkbox"]{
+	position: absolute;
+    top: 0.63rem;
+    left: 0;
+}
+.box-img-text{
+	margin-left: .45rem;
+    padding-right: .36rem;
+    padding-bottom: .2rem;
+    position: relative;
+}
+/*img*/
+.box-list .img{
+	width: 1.6rem;
+    margin-right: .16rem;
+}
+.box-img-text .bianj{
+	position: absolute;
+    right: 10px;
+    bottom: 6px;
+}
+.box-img-text .bianj button{
+	border: 1px solid #ab8a54;
+    border-radius: 4px;
+    color: #ab8a54;
+}
+
+.cart-js{
+	position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 1.3rem;
+    height: 1.2rem;
+    background: #fff;
+    padding-left: .34rem;
+}
+.cart-left{
+	position: relative;
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+}
+.cart-left label{
+	margin-left: .5rem;
+    display: inline-block;
+    padding-top: .5rem;
+}
+.cart-left input{
+	position: absolute;
+    left: 0;
+    top: .5rem;
+}
+.cart-right{
+	height:100%;
+}
+.cart-right .yf{
+	margin-top: 10px;
+	margin-right: 5px;
+	display: inline-block;
+}
+.cart-right button{
+	padding-left: .8rem;
+    padding-right: .8rem;
+    background: #ff7d13;
+    height: 100%;
+    color: #fff;
+    display: inline-block;
+}
+.num-change{
+	position: absolute;
+    right: 10px;
+    bottom: 6px;
+}
+.num-change em {
+    display: inline-block;
+    height: .5rem;
+    line-height: .5rem;
+    width: .4rem;
+    float: left;
+    color: #cccccc;
+    border: 1px solid #cccccc;
+    text-align: center;
+    font-style: normal;
+}
+.num-change .jian{
+	 border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.num-change .add{
+	border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.num {
+    display: block;
+    float: left;
+    text-align: center;
+    width: .6rem;
+    font-size: 14px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    height: .5rem;
+}
+.bianji{
+	text-align: center;
+	display: block;
+	color:#ab8a54;
+	margin-bottom: .5rem;
+}
+.bianji-box{
+	background: #fff;
+	padding-right: .36rem;
+	text-align: center;
+}
+
+

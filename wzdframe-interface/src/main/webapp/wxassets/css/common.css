@@ -1,0 +1,94 @@
+body{
+	font-family: "微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;	
+	background: #F0F0F0;
+}
+body,ul,p,h1,h2,h3,h4,h5,h6,textarea,button{
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+h1{font-size: 20px;}
+ul{list-style: none;}
+a{
+	color: inherit;
+	text-decoration: none;
+	border: 0;  /*去掉a点击时出现的蓝框*/
+}
+img{
+	width: auto;
+	max-width: 100%;
+}
+input,textarea{
+	border: none;
+	outline: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #7E8186;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #7E8186;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #7E8186;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #7E8186;
+}
+button{
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	background: inherit;
+}
+
+/*文字对齐方式*/
+.txtL{text-align: left;}
+.txtR{text-align: right;}
+.txtC{text-align: center;}
+.txtJ{text-align: justify;}
+
+/*list样式*/
+.list-unstyled{
+	padding-left: 0;
+	list-style: none;
+}
+
+/*左右浮动*/
+.l{float: left;}
+.r{float: right;}
+
+/*清除浮动*/
+.clearfix:after { clear: both; display: block; height: 0; content: ""; }
+
+/*当为ipad或者pc*/
+@media (min-device-width:768px) and (-webkit-min-device-pixel-ratio:2) {
+	img{
+		width: 100%;
+	}
+}
+
+.load-more{
+	width: 90%;
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+    margin: 5px auto;
+    /* background: #31364A; */
+    color: #31364A;
+}
+input[type=number] {  
+    -moz-appearance:textfield;  
+}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;  
+    margin: 0;  
+}  

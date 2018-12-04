@@ -1,0 +1,35 @@
+body{
+	background: #fff;
+}
+/*订单支付成功*/
+.content{
+	margin: 200px auto 100px;
+	width: 50%;
+	text-align: center;
+}
+.content img{
+	width: 30%;
+}
+/*查看订单  再去逛逛*/
+.wrap{
+	
+	margin: 0 55px;
+}
+/*button*/
+.butt{
+	display: inline-block;
+	padding: 10px 35px;
+	border-radius: 4px;
+}
+.select{
+	background: #31364A;
+	color: #fff;
+}
+.normal{
+	border: 1px solid #989BA4;
+}
+@media (max-device-width:320px) and (-webkit-min-device-pixel-ratio:2) {
+	.wrap{	
+		margin: 0 30px;
+	}
+}
